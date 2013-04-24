@@ -3,10 +3,10 @@ Alur Kontrol
 ============
 
 Di dalam program yang kita lihat hingga saat ini, selalu saja urutan statemen
-yang dijalankan oleh Python, berurutan dari atas ke bawah. Bagaimana jika 
-Anda ingin mengubah bagaimana alur kerjanya? Sebagai contoh Anda ingin 
+yang dijalankan oleh Python berurutan dari atas ke bawah. Bagaimana jika 
+Anda ingin mengubah alur kerjanya? Sebagai contoh Anda ingin 
 program untuk mengambil keputusan dan bertindak secara berbeda tergantung
-keputusan yang diambil. Sebagai contoh, misalnya mencetak 'Selamat Pagi' 
+pada kondisi yang ada. Sebagai contoh, misalnya mencetak 'Selamat Pagi' 
 atau 'Selamat Sore' tergantung waktu yang ada saat itu?
 
 Sebagaimana yang Anda sudah bisa tebak, ini dapat dilakukan lewat statemen 
@@ -55,7 +55,7 @@ Kita dapat menambahkan kondisi dalam ``else-block`` mengunakan ``elif``.
 
 Bagaimana program ini bekerja?
 
-Program ini akan meminta inputan tebakan dari pengguna berupa bilangan ini. 
+Program ini akan meminta inputan tebakan dari pengguna berupa bilangan. 
 Untuk mendapatkan inputan ini kita gunakan fungsi ``raw_input``. Keluaran
 dari fungsi ini adalah string yang diinputkan oleh user, oleh karena itu kita
 harus melakukan konversi ke tipe data int. Untuk konversi ini kita gunakan

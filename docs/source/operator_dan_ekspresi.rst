@@ -159,7 +159,7 @@ or       (boolean OR)
 Cara lain operasi matematika dan pengisian variabel
 ---------------------------------------------------
 
-Ketika melakukan operasi matematika kita sering setelah dilakukan operasi hasil
+Ketika melakukan operasi matematika, kita sering setelah dilakukan operasi hasil
 tersebut kita simpan dalam variabel. Di python ada jalan pintas untuk melakukan
 operasi dan melakukan *assignment*.
 

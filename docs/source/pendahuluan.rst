@@ -10,11 +10,14 @@ dengan pemgrograman tentunya).
 Persiapan
 ---------
 
-Untuk dapat mengikut workshop ini pastikan Python interpreter sudah terinstall di komputer anda.
+Untuk dapat mengikut workshop ini pastikan Python interpreter sudah terinstal di komputer anda.
 Versi python yang digunakan untuk tutorial ini adalah versi 2.7.*.
 
 
-Terdapat dua versi python yang saat ini ada versi 2 vs versi 3. Ada beberapa perbedaan syntax dan operasi ``IO``. Untuk `library` tambahan Python versi 3 masih kurang daripada versi 3. Jika anda sudah menguasai python 2 akan lebih mudah untuk bermigrasi ke versi 3.
+Terdapat dua versi python yang saat ini ada versi 2 vs versi 3. Ada beberapa perbedaan syntax, 
+operasi ``IO``, perubahan struktur modul. Untuk `library` tambahan Python versi 3 masih 
+kurang daripada versi 3. Jika anda sudah menguasai python 2 akan lebih mudah untuk bermigrasi
+ke versi 3.
 
 .. note::
    
@@ -24,8 +27,9 @@ Terdapat dua versi python yang saat ini ada versi 2 vs versi 3. Ada beberapa per
 
 Pengguna Windows
 ````````````````
-Untuk pengguna MS Windows. Python interpreter dapat di download di `Python.org Download`_. Kemudian pilih *individual releases*. Ada beberapa alternatif python installer untuk Windows 
-(ActiveState, Enthougt). Untuk workshop ini gunakan default installer dari python.org.
+Untuk pengguna MS Windows. Python interpreter dapat di download di `Python.org Download`_.
+Kemudian pilih *individual releases*. Ada beberapa alternatif python installer untuk Windows 
+(ActiveState, Enthought). Untuk workshop ini gunakan *default installer* dari python.org.
 
 
 .. figure:: /_static/img/python_on_windows.png
@@ -117,6 +121,6 @@ SublimeText 2
    :scale: 100%
    :class: centered
 
-   Edit program python menggunakan Sublime Text2x
+   Edit program python menggunakan Sublime Text2
 
 .. _Python.org Download: http://www.python.org/download/windows/

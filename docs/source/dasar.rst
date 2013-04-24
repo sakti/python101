@@ -9,7 +9,7 @@ Menggunakan Python sebagai kalkulator
 =====================================
 
 Program Python dapat dijalankan dengan beberapa mode. Jika kita mengeksekusi
-Python interpreter tanpa argument script Python yang telah kita buat, Python interpreter
+Python interpreter tanpa argumen script Python yang telah kita buat, Python interpreter
 akan masuk ke mode interaktif (REPL_, read-eval-print loop).
 
 
@@ -126,7 +126,7 @@ Anda bisa membuat file ``lat1.py`` menggunakan teks editor pilihan anda.
 
 
 .. note:: 
-   Untuk catatan, anda sebaiknya menset teks editor anda agar untuk indentasi
+   Untuk catatan, anda sebaiknya menset teks editor anda agar indentasi
    menggunakan spasi / space sebanyak 4. Standar PEP (Python Enhancement Proposal)
    menyarankan agar indentasi selalu konsisten. 
 
@@ -138,7 +138,7 @@ Setelah file ``lat1.py`` disimpan, anda dapat menjalankannya melalui terminal.
    $ python lat1.py
    Halo Dunia!
 
-Jika anda menggunakan SublimeText2 anda dapat menjalankannya menggunakan menu. 
+Jika anda menggunakan SublimeText2 anda dapat menjalankannya menggunakan menu
 ``Tools -> Build``, untuk linux anda dapat menggunakan shortcut ``Ctrl+b``.
 
 .. figure:: /_static/img/lat1.py.png
@@ -155,8 +155,8 @@ Komentar
 
 Komentar adalah teks apapun yang diawali dengan tanda ``#``, digunakan untuk 
 memberikan catatan kepada pembaca kode. 
-Anda dapat melihat kembali ``lat1.py`` untuk memberikan keterangan nama file
-kita dapat memberikan komentar.
+Anda dapat melihat kembali ``lat1.py``, keterangan keterangan nama file
+ada dalam bentuk komentar.
 
 
 Berikut file latihan 2, perhatikan statemen print terakhir tidak akan dieksekusi
@@ -259,9 +259,9 @@ Variabel
 
 Hanya menggunakan konstanta literal saja cukup membosankan, kita membutuhkan cara
 untuk menyimpan dan memanipulasi informasi. Untuk hal ini kita bisa menggunakan
-variabel, seperti namanya variabel dapat diisi dengan bermacam-macam nilai, anda dapat
+variabel. Seperti namanya, variabel dapat diisi dengan bermacam-macam nilai, anda dapat
 menyimpan apapun menggunakan variabel. Variabel adalah sebagian dari memori komputer
-anda yang digunakan untuk menyimpan informasi. Berbeda dengan konstanta literal, 
+yang digunakan untuk menyimpan informasi. Berbeda dengan konstanta literal, 
 anda membutuhkan cara untuk mengakses variabel ini, oleh karena itu kita memberi
 nama kepada variabel.
 
@@ -273,7 +273,7 @@ Berikut aturan penamaan variabel dalam python.
   atau unicode) atau underscore ``_``.
 - Karakter selanjutnya dapat berupa alfabet (huruf besar atau huruf kecil ASCII, atau
   unicode), underscore ``_`` atau digit (0-9).
-- Nama variabel bersifat case-sensitif. Sebagai contoh, namaMhs dan namamhs adalah
+- Nama variabel bersifat case-sensitif. Sebagai contoh, ``namaMhs`` dan ``namamhs`` adalah
   variabel yang berbeda.
 
 
@@ -335,7 +335,7 @@ builtin ``dir``.
    >>> 'abc'.upper()
    'ABC'
 
-Selain dapat melihat isi obyek anda dapat mengakses dokumentasi object menggunakan
+Selain dapat melihat isi obyek, anda dapat mengakses dokumentasi object menggunakan
 ``help``.
 
 ::
@@ -409,11 +409,11 @@ Indentasi
 ---------
 
 Karakter spasi penting untuk bahasa pemrogramman Python. Lebih tepatnya **spasi
-diawal baris** atau indentasi. Spasi diawal (spasi atau tab) baris logis digunakan
-untuk menentukan level indentasi, yang akan mempengaruhi pengelompokan statemen.
+diawal baris** atau indentasi. Spasi diawal (baik berupa spasi atau tab) baris logis 
+digunakan untuk menentukan level indentasi, yang akan mempengaruhi pengelompokan statemen.
 
 Statemen yang mempunyai level indentasi sama masuk dalam satu kelompok yang disebut
-**block**. Hal ini akan digunakan pada bab berikutnya.
+blok / **block**. Hal ini akan digunakan pada bab berikutnya.
 
 ::
    
