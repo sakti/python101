@@ -17,11 +17,12 @@ Workshop Python 101
    io
    exception
    standard_library
+   kontributor
    referensi
    
 
 .. note:: 
-   Struktur workshop ini diadopsi dari buku ``Byte of Python`` (lihat referensi).
+   Modul workshop ini diadopsi dari buku ``Byte of Python`` (lihat referensi).
 
 Indeks dan tabel
 ================

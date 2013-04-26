@@ -58,7 +58,8 @@ Pengguna Linux
 Pada umumnya distro linux sudah menyertakan Python secara default. Pastikan default python interpreter
 menunjuk ke python versi 2.*:
 
-::
+
+.. code-block:: bash
 
     $ python --version
     Python 2.7.3

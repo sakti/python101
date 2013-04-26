@@ -9,10 +9,10 @@ List
 ====
 
 List adalah struktur data yang menyimpan koleksi data terurut, anda dapat
-menyimmpan sequence / rangkaian item menggunakan list.
+menyimpan sequence / rangkaian item menggunakan list.
 
 Item dalam list ditutup menggunakan kurung siku ``[]`` (list literal).
-Setelah list dibuat anda bisa menambah, mengurangi, dan mencari item padaa
+Setelah list dibuat anda bisa menambah, mengurangi, dan mencari item pada
 list. Karena kita dapat menambah dan mengurangi item, list bersifat ``mutable``.
 
 Pengenalan singkat obyek dan class
@@ -58,7 +58,7 @@ untuk class. Anda bisa menggunakan variabel / nama ini pada obyek class tersebut
    del daftar_belanja[0]
 
    print 'saya membeli', barang_pertama
-   print 'daftarr belanja sekarang:', daftar_belanja
+   print 'daftar belanja sekarang:', daftar_belanja
 
 Tuple
 =====

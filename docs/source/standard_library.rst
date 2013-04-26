@@ -146,7 +146,7 @@ PYMOTW (Python Module of The Week)
 
 Masih ada banyak modul yang ada di Python. Untuk menjelajahi
 modul-modul yang tersedia di Python anda dapat membaca
-`Python Module of The Week`_ yang membahas modul python satu persatu.
+`Python Module of The Week`_ yang membahas modul python satu per satu.
 
 
 

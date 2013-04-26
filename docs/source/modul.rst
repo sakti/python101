@@ -98,6 +98,9 @@ direktori ini merupakan *package* Python.
 Untuk latihan kali ini, kita buat direktori lat24. Direktor ini
 berisi
 
+
+__init__.py
+
 ::
    
    # __init__.py

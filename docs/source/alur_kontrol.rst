@@ -9,9 +9,8 @@ program untuk mengambil keputusan dan bertindak secara berbeda tergantung
 pada kondisi yang ada. Sebagai contoh, misalnya mencetak 'Selamat Pagi' 
 atau 'Selamat Sore' tergantung waktu yang ada saat itu?
 
-Sebagaimana yang Anda sudah bisa tebak, ini dapat dilakukan lewat statemen 
-alur kontrol. Ada tiga macam statemen alur kontrol di Python - 
-``if``, ``for`` dan ``while``.
+Hal ini dapat dilakukan lewat statemen alur kontrol. Ada tiga macam 
+statemen alur kontrol di Python - ``if``, ``for`` dan ``while``.
 
 
 Statemen If
@@ -131,10 +130,10 @@ Obyek dapat dinilai atau dikonversi ke nilai boolean
 Perulangan For (For Loop)
 =========================
 
-Statemen perulangan ``for ... in ... `` merupakan statemen perulangan
+Statemen perulangan ``for ... in ...`` merupakan statemen perulangan
 selain ``while``. Statemen ini melakukan *iterasi* dari rangkaian obyek,
 berjalan melalui tiap item yang ada pada rangkaian / sequence. 
-Apa itu rangkaian / sequence? rangkaian yaitu koleksi item yang terurut.
+Apa itu rangkaian / *sequence*? rangkaian yaitu koleksi item yang terurut.
 
 
 ::

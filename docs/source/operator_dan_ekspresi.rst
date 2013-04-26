@@ -36,7 +36,7 @@ Operator Keterangan
          ditentukan.
 
          ``11 > 1`` menghasilkan `5`. ``11`` direpresentasikan oleh bit dengan
-         ``1101`` kemudian digeser kekanan 1 bit menghasilkan ``101`` yang
+         ``1011`` kemudian digeser kekanan 1 bit menghasilkan ``101`` yang
          merupakan desimal angka ``5``.
 &        (bit-wise AND)
 

@@ -82,7 +82,7 @@ Method init
 
 Ada nama-nama method spesial pada class Python. ``__init__`` adalah salah satunya, method
 ini akan dijalankan ketika obyek dibuat. Method ini berguna untuk melakukan inisialisasi.
-Perhatikan garis bawah dua kali di awal dan di akhir method (double underscore, dunder).
+Perhatikan garis bawah dua kali di awal dan di akhir method (*double underscore, dunder*).
 
 ::
 
