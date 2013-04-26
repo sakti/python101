@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dasar &mdash; Workshop Python 101</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Workshop Python 101" href="index.html" />
+    <link rel="next" title="Operator dan Ekspresi" href="operator_dan_ekspresi.html" />
+    <link rel="prev" title="Pendahuluan" href="pendahuluan.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="operator_dan_ekspresi.html" title="Operator dan Ekspresi"
+             accesskey="N">berikut</a> |</li>
+        <li class="right" >
+          <a href="pendahuluan.html" title="Pendahuluan"
+             accesskey="P">sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Daftar Isi</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Dasar</a><ul>
+<li><a class="reference internal" href="#menggunakan-python-sebagai-kalkulator">Menggunakan Python sebagai kalkulator</a><ul>
+<li><a class="reference internal" href="#operasi-aritmatika">Operasi aritmatika</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#halo-dunia">Halo Dunia!</a></li>
+<li><a class="reference internal" href="#komentar">Komentar</a></li>
+<li><a class="reference internal" href="#konstanta-literal">Konstanta Literal</a></li>
+<li><a class="reference internal" href="#bilangan">Bilangan</a></li>
+<li><a class="reference internal" href="#string">String</a><ul>
+<li><a class="reference internal" href="#immutable">Immutable</a></li>
+<li><a class="reference internal" href="#format-string">Format String</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#variabel">Variabel</a><ul>
+<li><a class="reference internal" href="#nama-pengenal">Nama Pengenal</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tipe-data">Tipe Data</a></li>
+<li><a class="reference internal" href="#obyek">Obyek</a></li>
+<li><a class="reference internal" href="#penulisan-program-python">Penulisan Program Python</a><ul>
+<li><a class="reference internal" href="#baris-logis-dan-fisik">Baris Logis dan Fisik</a></li>
+<li><a class="reference internal" href="#indentasi">Indentasi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Topik sebelum</h4>
+  <p class="topless"><a href="pendahuluan.html"
+                        title="bab sebelum">Pendahuluan</a></p>
+  <h4>Topik berikutnya</h4>
+  <p class="topless"><a href="operator_dan_ekspresi.html"
+                        title="bab berikutnya">Operator dan Ekspresi</a></p>
+  <h3>Halaman Ini</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/dasar.txt"
+           rel="nofollow">Lihat Sumber</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pencarian cepat</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Masukkan term pencarian atau nama modul, class atau fungsi.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dasar">
+<h1>Dasar<a class="headerlink" href="#dasar" title="Link permanent untuk headline ini">¶</a></h1>
+<p>Dasar-dasar bahasa pemrograman Python.</p>
+<div class="section" id="menggunakan-python-sebagai-kalkulator">
+<h2>Menggunakan Python sebagai kalkulator<a class="headerlink" href="#menggunakan-python-sebagai-kalkulator" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Program Python dapat dijalankan dengan beberapa mode. Jika kita mengeksekusi
+Python interpreter tanpa argumen script Python yang telah kita buat, Python interpreter
+akan masuk ke mode interaktif (<a class="reference external" href="http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>, read-eval-print loop).</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python
+Python 2.7.3 <span class="o">(</span>default, Aug  1 2012, 05:14:39<span class="o">)</span>
+<span class="o">[</span>GCC 4.6.3<span class="o">]</span> on linux2
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for </span>more information.
+&gt;&gt;&gt;
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Kita dapat memanfaatkan Python dengan mode interaktif sebagai kalkulator.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python
+Python 2.7.3 <span class="o">(</span>default, Aug  1 2012, 05:14:39<span class="o">)</span>
+<span class="o">[</span>GCC 4.6.3<span class="o">]</span> on linux2
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for </span>more information.
+&gt;&gt;&gt; 1 + 1
+2
+&gt;&gt;&gt; 40 * 2
+80
+&gt;&gt;&gt; 40 / 5
+8
+&gt;&gt;&gt; 9 - 10
+-1
+&gt;&gt;&gt; 2 + 3 + 4 + 5
+14
+&gt;&gt;&gt; 2 ** 32
+4294967296
+</pre></div>
+</div>
+<div class="section" id="operasi-aritmatika">
+<h3>Operasi aritmatika<a class="headerlink" href="#operasi-aritmatika" title="Link permanent untuk headline ini">¶</a></h3>
+<p>Berikut table operasi aritmatika yang ada di Python:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operasi</th>
+<th class="head">Keterangan</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>+</td>
+<td>Menambahkan dua obyek</td>
+</tr>
+<tr class="row-odd"><td>-</td>
+<td>Mengurangi obyek dengan obyek yang lain</td>
+</tr>
+<tr class="row-even"><td>*</td>
+<td>Perkalian</td>
+</tr>
+<tr class="row-odd"><td>**</td>
+<td>Pangkat</td>
+</tr>
+<tr class="row-even"><td>/</td>
+<td>Pembagian</td>
+</tr>
+<tr class="row-odd"><td>//</td>
+<td>Pembagian bulat ke bawah</td>
+</tr>
+<tr class="row-even"><td>%</td>
+<td>Sisa hasil bagi (modulus)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contoh</strong></p>
+<p>Pembagian, perhatikan perbedaan antara bilangan bulat dan pecahan / desimal.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mf">10.0</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="go">3.3333333333333335</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">/</span> <span class="mf">3.0</span>
+<span class="go">3.3333333333333335</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mf">10.0</span> <span class="o">/</span> <span class="mf">3.0</span>
+<span class="go">3.3333333333333335</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mf">10.0</span> <span class="o">//</span> <span class="mf">3.0</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mf">10.0</span> <span class="o">//</span> <span class="mi">3</span>
+<span class="go">3.0</span>
+</pre></div>
+</div>
+<p>Sisa hasil bagi.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="mi">5</span> <span class="o">%</span> <span class="mi">4</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="mi">5</span> <span class="o">%</span> <span class="o">-</span><span class="mi">4</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Catatan</p>
+<p>mode eksekusi lain:</p>
+<p><strong>-m</strong>
+Mengeksekusi module, contoh: <tt class="docutils literal"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">SimpleHTTPServer</span></tt> untuk membuat
+webserver statis</p>
+<p class="last"><strong>-c</strong>
+Mengeksekusi command dari pameter yang diterima, contoh:
+<tt class="docutils literal"><span class="pre">python</span> <span class="pre">-c</span> <span class="pre">'import</span> <span class="pre">this'</span></tt> untuk menampilkan <a class="reference external" href="http://www.python.org/dev/peps/pep-0020/">Zen of Python</a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="halo-dunia">
+<h2>Halo Dunia!<a class="headerlink" href="#halo-dunia" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Program pertama yaitu program yang jika dijalankan akan mengeluarkan hasil
+teks berupa <tt class="docutils literal"><span class="pre">Halo</span> <span class="pre">Dunia!</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat1.py</span>
+<span class="k">print</span> <span class="s">&#39;Halo Dunia!&#39;</span>
+</pre></div>
+</div>
+<p>Anda bisa membuat file <tt class="docutils literal"><span class="pre">lat1.py</span></tt> menggunakan teks editor pilihan anda.</p>
+<div class="admonition note">
+<p class="first admonition-title">Catatan</p>
+<p class="last">Untuk catatan, anda sebaiknya menset teks editor anda agar indentasi
+menggunakan spasi / space sebanyak 4. Standar PEP (Python Enhancement Proposal)
+menyarankan agar indentasi selalu konsisten.</p>
+</div>
+<p>Setelah file <tt class="docutils literal"><span class="pre">lat1.py</span></tt> disimpan, anda dapat menjalankannya melalui terminal.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python lat1.py
+Halo Dunia!
+</pre></div>
+</div>
+<p>Jika anda menggunakan SublimeText2 anda dapat menjalankannya menggunakan menu
+<tt class="docutils literal"><span class="pre">Tools</span> <span class="pre">-&gt;</span> <span class="pre">Build</span></tt>, untuk linux anda dapat menggunakan shortcut <tt class="docutils literal"><span class="pre">Ctrl+b</span></tt>.</p>
+<div class="figure">
+<a class="centered reference internal image-reference" href="_images/lat1.py.png"><img alt="Running program python menggunakan SublimeText2" class="centered" src="_images/lat1.py.png" style="width: 642.0px; height: 509.0px;" /></a>
+<p class="caption">Running program python menggunakan SublimeText2</p>
+</div>
+</div>
+<div class="section" id="komentar">
+<h2>Komentar<a class="headerlink" href="#komentar" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Komentar adalah teks apapun yang diawali dengan tanda <tt class="docutils literal"><span class="pre">#</span></tt>, digunakan untuk
+memberikan catatan kepada pembaca kode.
+Anda dapat melihat kembali <tt class="docutils literal"><span class="pre">lat1.py</span></tt>, keterangan keterangan nama file
+ada dalam bentuk komentar.</p>
+<p>Berikut file latihan 2, perhatikan statemen print terakhir tidak akan dieksekusi
+karena berupa komentar.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat2.py</span>
+<span class="c"># lat2.py adalah nama file ini</span>
+<span class="c"># program ini akan menampilkan &#39;Halo Indonesia!&#39;</span>
+<span class="c"># kemudian akan menampilkan &#39;Halo Jakarta!&#39;</span>
+
+<span class="k">print</span> <span class="s">&#39;Halo Indonesia!&#39;</span>
+<span class="k">print</span> <span class="s">&#39;Halo Jakarta!&#39;</span>
+
+<span class="c"># print &#39;Teks ini tidak akan dicetak.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="konstanta-literal">
+<h2>Konstanta Literal<a class="headerlink" href="#konstanta-literal" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Salah satu contoh konstanta literal yaitu bilangan seperti <tt class="docutils literal"><span class="pre">5</span></tt>, <tt class="docutils literal"><span class="pre">1.23</span></tt>, atau
+string seperti <tt class="docutils literal"><span class="pre">'hari</span> <span class="pre">senin'</span></tt> atau <tt class="docutils literal"><span class="pre">&quot;hari</span> <span class="pre">jum'at&quot;</span></tt>. Hal ini disebut literal atau
+harfiah karena anda bisa menggunakan nilai ini secara langsung. Bilangan <tt class="docutils literal"><span class="pre">2</span></tt> selalu
+merepresentasikan dirinya sendiri, dinamakan konstanta karena nilainya tidak dapat
+diubah.</p>
+<p>Dalam latihan 2, <tt class="docutils literal"><span class="pre">'Halo</span> <span class="pre">Indonesia!'</span></tt> dan <tt class="docutils literal"><span class="pre">'Halo</span> <span class="pre">Jakarta!'</span></tt> merupakan string literal.</p>
+</div>
+<div class="section" id="bilangan">
+<h2>Bilangan<a class="headerlink" href="#bilangan" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Di Python bilangan dibagi menjadi dua tipe utama - integer (bulat) dan float (pecahan).
+Salah satu contoh dari integer yaitu <tt class="docutils literal"><span class="pre">2</span></tt> yang merupakan bilangan bulat.
+Contoh untuk float yaitu <tt class="docutils literal"><span class="pre">3.23</span></tt> dan <tt class="docutils literal"><span class="pre">52.3e-4</span></tt>. Notasi <tt class="docutils literal"><span class="pre">e</span></tt> mengindikasikan pangkat
+10. Untuk kasus ini <tt class="docutils literal"><span class="pre">52.3e-4</span></tt> berarti 52.3 * 10 <sup>-4</sup>.</p>
+</div>
+<div class="section" id="string">
+<h2>String<a class="headerlink" href="#string" title="Link permanent untuk headline ini">¶</a></h2>
+<p>String adalah rangkaian karakter. Anda bisa menuliskan string literal dengan beberapa cara:</p>
+<ul>
+<li><p class="first"><em>Single Quote</em></p>
+<p>Contoh: <tt class="docutils literal"><span class="pre">'Halo</span> <span class="pre">Bandung!'</span></tt>, <tt class="docutils literal"><span class="pre">'Hari</span> <span class="pre">Jum\'at'</span></tt>.</p>
+</li>
+<li><p class="first"><em>Double Quote</em></p>
+<p>Contoh: <tt class="docutils literal"><span class="pre">&quot;Halo</span> <span class="pre">Surabaya!&quot;</span></tt>, <tt class="docutils literal"><span class="pre">&quot;Hari</span> <span class="pre">Jum'at&quot;</span></tt>. Perhatikan tanda quote <tt class="docutils literal"><span class="pre">'</span></tt> harus
+di <em>escape</em> pada single quote. Selain itu tidak ada perbedaan antara single
+quote dan double quote, anda bebas untuk memilih.</p>
+</li>
+<li><p class="first"><em>Triple Quote</em></p>
+<p>Python mendukung multi-line string atau string dengan baris lebih dari satu. Anda
+dapat dengan bebas menuliskan single quote <tt class="docutils literal"><span class="pre">'</span></tt> dan double quote <tt class="docutils literal"><span class="pre">&quot;</span></tt> dalam
+string literal yang diapit dengan triple quote. Contoh:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;Ini adalah contoh multi-line string</span>
+<span class="sd">saya tambahkan single quote &#39; dan double</span>
+<span class="sd">quote &quot;, tanpa perlu meng-escape \\ terlebih dahulu&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Contoh lain:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="sd">&#39;&#39;&#39;Ini adalah contoh multi-line string</span>
+<span class="sd">saya tambahkan single quote &#39; dan double</span>
+<span class="sd">quote &quot;, tanpa perlu meng-escape \\ terlebih dahulu&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Perhatikan perbedaan antara dua contoh diatas.</p>
+</li>
+</ul>
+<div class="section" id="immutable">
+<h3>Immutable<a class="headerlink" href="#immutable" title="Link permanent untuk headline ini">¶</a></h3>
+<p>String bersifat immutable yang berarti setelah string dibuat, string tersebut tidak
+bisa diubah.</p>
+</div>
+<div class="section" id="format-string">
+<h3>Format String<a class="headerlink" href="#format-string" title="Link permanent untuk headline ini">¶</a></h3>
+<p>Terkadang kita ingin membuat string dari informasi lain, untuk hal ini kita dapat
+menggunakan format string.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat3.py</span>
+<span class="c"># format string menggunakan operator &#39;%&#39; dan method format</span>
+
+<span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> pergi ke </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&#39;ibu&#39;</span><span class="p">,</span> <span class="s">&#39;pasar&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;{0} pergi ke {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;ibu&#39;</span><span class="p">,</span> <span class="s">&#39;pasar&#39;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&#39;jumlah total: </span><span class="si">%10.3f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="mf">10.3333</span>
+<span class="k">print</span> <span class="s">&#39;jumlah total: {0:10.3f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">10.3333</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Catatan</p>
+<p class="last">Operator <tt class="docutils literal"><span class="pre">%</span></tt> jika digunakan untuk string bukan berarti modulus melainkan
+string format.</p>
+</div>
+</div>
+</div>
+<div class="section" id="variabel">
+<h2>Variabel<a class="headerlink" href="#variabel" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Hanya menggunakan konstanta literal saja cukup membosankan, kita membutuhkan cara
+untuk menyimpan dan memanipulasi informasi. Untuk hal ini kita bisa menggunakan
+variabel. Seperti namanya, variabel dapat diisi dengan bermacam-macam nilai, anda dapat
+menyimpan apapun menggunakan variabel. Variabel adalah sebagian dari memori komputer
+yang digunakan untuk menyimpan informasi. Berbeda dengan konstanta literal,
+anda membutuhkan cara untuk mengakses variabel ini, oleh karena itu kita memberi
+nama kepada variabel.</p>
+<div class="section" id="nama-pengenal">
+<h3>Nama Pengenal<a class="headerlink" href="#nama-pengenal" title="Link permanent untuk headline ini">¶</a></h3>
+<p>Berikut aturan penamaan variabel dalam python.</p>
+<ul class="simple">
+<li>Karakter pertama harus berupa karakter alfabet (huruf besar atau huruf kecil ASCII,
+atau unicode) atau underscore <tt class="docutils literal"><span class="pre">_</span></tt>.</li>
+<li>Karakter selanjutnya dapat berupa alfabet (huruf besar atau huruf kecil ASCII, atau
+unicode), underscore <tt class="docutils literal"><span class="pre">_</span></tt> atau digit (0-9).</li>
+<li>Nama variabel bersifat case-sensitif. Sebagai contoh, <tt class="docutils literal"><span class="pre">namaMhs</span></tt> dan <tt class="docutils literal"><span class="pre">namamhs</span></tt> adalah
+variabel yang berbeda.</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat4.py</span>
+<span class="c"># menggunakan variabel</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="n">nama</span> <span class="o">=</span> <span class="s">&#39;ibu&#39;</span>
+<span class="n">tempat</span> <span class="o">=</span> <span class="s">&#39;kantor&#39;</span>
+
+<span class="k">print</span> <span class="s">&#39;jumlah total = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">total</span>
+<span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> pergi ke </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">nama</span><span class="p">,</span> <span class="n">tempat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tipe-data">
+<h2>Tipe Data<a class="headerlink" href="#tipe-data" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Variabel dapat menyimpan nilai dengan berbagi tipe disebut dengan tipe data. Bilangan
+dan string adalah tipe dasar, yang sudah dibahas sebelumnya. Pada latihan berikutnya
+akan dibahas tipe data yang lain.</p>
+<p>Anda menggunakan <tt class="docutils literal"><span class="pre">type</span></tt> untuk menentukan tipe data variabel / obyek yang ada.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&lt;type &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mf">3.2</span><span class="p">)</span>
+<span class="go">&lt;type &#39;float&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="go">&lt;type &#39;long&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s">&#39;abc&#39;</span><span class="p">)</span>
+<span class="go">&lt;type &#39;str&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">&lt;type &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="obyek">
+<h2>Obyek<a class="headerlink" href="#obyek" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Semua yang ada dalam Python adalah obyek / object. Obyek memiliki field yang memiliki
+nilai tertentu dan method untuk operasi tertentu.</p>
+<p>Untuk melihat field dan method yang ada dalam suatu obyek kita dapat gunakan fungsi
+builtin <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="s">&#39;abc&#39;</span><span class="p">)</span>
+<span class="go">[&#39;__add__&#39;, &#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__getnewargs__&#39;, &#39;__getslice__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__mod__&#39;, &#39;__mul__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__rmod__&#39;, &#39;__rmul__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;_formatter_field_name_split&#39;, &#39;_formatter_parser&#39;, &#39;capitalize&#39;, &#39;center&#39;, &#39;count&#39;, &#39;decode&#39;, &#39;encode&#39;, &#39;endswith&#39;, &#39;expandtabs&#39;, &#39;find&#39;, &#39;format&#39;, &#39;index&#39;, &#39;isalnum&#39;, &#39;isalpha&#39;, &#39;isdigit&#39;, &#39;islower&#39;, &#39;isspace&#39;, &#39;istitle&#39;, &#39;isupper&#39;, &#39;join&#39;, &#39;ljust&#39;, &#39;lower&#39;, &#39;lstrip&#39;, &#39;partition&#39;, &#39;replace&#39;, &#39;rfind&#39;, &#39;rindex&#39;, &#39;rjust&#39;, &#39;rpartition&#39;, &#39;rsplit&#39;, &#39;rstrip&#39;, &#39;split&#39;, &#39;splitlines&#39;, &#39;startswith&#39;, &#39;strip&#39;, &#39;swapcase&#39;, &#39;title&#39;, &#39;translate&#39;, &#39;upper&#39;, &#39;zfill&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;abc&#39;</span><span class="o">.</span><span class="n">upper</span>
+<span class="go">&lt;built-in method upper of str object at 0x7fe601a1f800&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;abc&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="go">&#39;ABC&#39;</span>
+</pre></div>
+</div>
+<p>Selain dapat melihat isi obyek, anda dapat mengakses dokumentasi object menggunakan
+<tt class="docutils literal"><span class="pre">help</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="go">Help on class str in module __builtin__:</span>
+
+<span class="go">class str(basestring)</span>
+<span class="go"> |  str(object) -&gt; string</span>
+<span class="go"> |</span>
+<span class="go"> |  Return a nice string representation of the object.</span>
+<span class="go"> |  If the argument is a string, the return value is the same object.</span>
+<span class="go"> |</span>
+<span class="go"> |  Method resolution order:</span>
+<span class="go"> |      str</span>
+<span class="go"> |      basestring</span>
+<span class="go"> |      object</span>
+<span class="gp">...</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+<span class="go">Help on method_descriptor:</span>
+
+<span class="go">upper(...)</span>
+<span class="go">    S.upper() -&gt; string</span>
+
+<span class="go">    Return a copy of the string S converted to uppercase.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="penulisan-program-python">
+<h2>Penulisan Program Python<a class="headerlink" href="#penulisan-program-python" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Berikut cara menulis program Python.</p>
+<ul class="simple">
+<li>Buka teks editor pilihan anda, seperti: vim, emacs, gedit, notepad++, sublimetext2.</li>
+<li>Ketikkan kode program seperti contoh yang ada (hindari copy-paste).</li>
+<li>Simpan sesuai nama yang ada.</li>
+<li>Untuk menjalankan program gunakan terminal / command line,
+ketik <tt class="docutils literal"><span class="pre">python</span> <span class="pre">namaprogram.py</span></tt>.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Catatan</p>
+<p class="last">Untuk pengguna sublimetext2 anda dapat menjalakan program python
+menggunakan shortcut <tt class="docutils literal"><span class="pre">Ctrl+b</span></tt>.</p>
+</div>
+<div class="section" id="baris-logis-dan-fisik">
+<h3>Baris Logis dan Fisik<a class="headerlink" href="#baris-logis-dan-fisik" title="Link permanent untuk headline ini">¶</a></h3>
+<p>Baris fisik adalah apa yang anda lihat ketika anda melihat program. Baris logis
+adalah apa yang Python lihat sebagai statemen tunggal. Python mengasumsikan
+bahwa setiap baris fisik sesuai dengan baris logic.</p>
+<p>Sebagai contoh baris logis seperti statemen <tt class="docutils literal"><span class="pre">print</span> <span class="pre">'Halo</span> <span class="pre">Dunia!'</span></tt>, jika anda
+menulis sebagai satu baris maka baris logis sesuai dengan baris fisik.</p>
+<div class="admonition note">
+<p class="first admonition-title">Catatan</p>
+<p>Anda dapat menulis <tt class="docutils literal"><span class="pre">print</span> <span class="pre">'Halo</span> <span class="pre">Dunia!'</span></tt> menjadi dua baris, contoh:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> \
+<span class="s">&#39;Halo Dunia!&#39;</span>
+</pre></div>
+</div>
+<p>Anda juga dapat membuat beberapa baris logis menjadi satu baris fisik, contoh:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="n">nama</span> <span class="o">=</span> <span class="s">&#39;budi&#39;</span><span class="p">;</span> <span class="k">print</span> <span class="n">nama</span>
+</pre></div>
+</div>
+</div>
+<p>Secara implisit, Python menyarankan menggunakan satu statemen tiap baris untuk
+menjadikan kode menjadi lebih mudah dibaca.</p>
+</div>
+<div class="section" id="indentasi">
+<h3>Indentasi<a class="headerlink" href="#indentasi" title="Link permanent untuk headline ini">¶</a></h3>
+<p>Karakter spasi penting untuk bahasa pemrogramman Python. Lebih tepatnya <strong>spasi
+diawal baris</strong> atau indentasi. Spasi diawal (baik berupa spasi atau tab) baris logis
+digunakan untuk menentukan level indentasi, yang akan mempengaruhi pengelompokan statemen.</p>
+<p>Statemen yang mempunyai level indentasi sama masuk dalam satu kelompok yang disebut
+blok / <strong>block</strong>. Hal ini akan digunakan pada bab berikutnya.</p>
+<div class="highlight-python"><pre># lat5.py
+# error indentasi
+
+a = 10
+b = 20
+c = 30
+
+ total = a + b + c
+
+nama = 'ibu'
+tempat = 'kantor'
+
+print 'jumlah total = %s' % total
+print '%s pergi ke %s' % (nama, tempat)</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             >index</a></li>
+        <li class="right" >
+          <a href="operator_dan_ekspresi.html" title="Operator dan Ekspresi"
+             >berikut</a> |</li>
+        <li class="right" >
+          <a href="pendahuluan.html" title="Pendahuluan"
+             >sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Indocisc.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>

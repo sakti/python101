@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Fungsi (Function) &mdash; Workshop Python 101</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Workshop Python 101" href="index.html" />
+    <link rel="next" title="Modul" href="modul.html" />
+    <link rel="prev" title="Alur Kontrol" href="alur_kontrol.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modul.html" title="Modul"
+             accesskey="N">berikut</a> |</li>
+        <li class="right" >
+          <a href="alur_kontrol.html" title="Alur Kontrol"
+             accesskey="P">sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Daftar Isi</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Fungsi (Function)</a><ul>
+<li><a class="reference internal" href="#parameter-fungsi">Parameter Fungsi</a></li>
+<li><a class="reference internal" href="#variabel-lokal">Variabel Lokal</a></li>
+<li><a class="reference internal" href="#penggunaan-statemen-global">Penggunaan Statemen Global</a></li>
+<li><a class="reference internal" href="#nilai-argumen-default">Nilai Argumen Default</a></li>
+<li><a class="reference internal" href="#keyword-argumen">Keyword Argumen</a></li>
+<li><a class="reference internal" href="#parameter-varargs">Parameter VarArgs</a></li>
+<li><a class="reference internal" href="#statemen-return">Statemen Return</a></li>
+<li><a class="reference internal" href="#doc-string">Doc String</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Topik sebelum</h4>
+  <p class="topless"><a href="alur_kontrol.html"
+                        title="bab sebelum">Alur Kontrol</a></p>
+  <h4>Topik berikutnya</h4>
+  <p class="topless"><a href="modul.html"
+                        title="bab berikutnya">Modul</a></p>
+  <h3>Halaman Ini</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/fungsi.txt"
+           rel="nofollow">Lihat Sumber</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pencarian cepat</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Masukkan term pencarian atau nama modul, class atau fungsi.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fungsi-function">
+<h1>Fungsi (Function)<a class="headerlink" href="#fungsi-function" title="Link permanent untuk headline ini">¶</a></h1>
+<p>Fungsi adalah bagian dari program yang dapat digunakan ulang. Hal ini
+bisa dicapai dengan memberi nama pada blok statemen, kemudian nama ini
+dapat dipanggil di manapun dalam program. Kita telah menggunakan beberapa
+fungsi builtin seperti <tt class="docutils literal"><span class="pre">range</span></tt>.</p>
+<p>Fungsi dalam Python didefinisikan menggunakan kata kunci <tt class="docutils literal"><span class="pre">def</span></tt>. Setelah
+<tt class="docutils literal"><span class="pre">def</span></tt> ada nama pengenal fungsi diikut dengan parameter yang diapit oleh
+tanda kurung dan diakhir dingan tanda titik dua <tt class="docutils literal"><span class="pre">:</span></tt>. Baris berikutnya
+berupa blok fungsi yang akan dijalankan jika fungsi dipanggil.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat15.py</span>
+
+<span class="k">def</span> <span class="nf">halo_dunia</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">&#39;Halo Dunia!&#39;</span>
+
+<span class="n">halo_dunia</span><span class="p">()</span>  <span class="c"># memanggil fungsi halo_dunia</span>
+<span class="n">halo_dunia</span><span class="p">()</span>  <span class="c"># fungsi halo_dunia dipanggil lagi</span>
+</pre></div>
+</div>
+<div class="section" id="parameter-fungsi">
+<h2>Parameter Fungsi<a class="headerlink" href="#parameter-fungsi" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Fungsi dapat membaca parameter, parameter adalah nilai yang disediakan
+kepada fungsi, dimana nilai ini akan menentukan <tt class="docutils literal"><span class="pre">output</span></tt> yang akan
+dihasilkan fungsi.</p>
+<p>Parameter dikirim dalam tanda kurung saat pemanggilan fungsi. Nilai
+parameter saat pemanggilan fungsi dinamakan <em>argument</em>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat16.py</span>
+
+<span class="k">def</span> <span class="nf">halo</span><span class="p">(</span><span class="n">nama</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&#39;Halo </span><span class="si">%s</span><span class="s">!&#39;</span> <span class="o">%</span> <span class="n">nama</span>
+
+<span class="k">def</span> <span class="nf">cetak_maksimal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> merupakan nilai maksimal&#39;</span> <span class="o">%</span> <span class="n">a</span>
+    <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> sama dengan </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> merupakan nilai maksimal&#39;</span> <span class="o">%</span> <span class="n">b</span>
+
+<span class="n">halo</span><span class="p">(</span><span class="s">&#39;Dunia&#39;</span><span class="p">)</span>  <span class="c"># memanggil fungsi halo dengan argumen &#39;Dunia&#39;</span>
+<span class="n">halo</span><span class="p">(</span><span class="s">&#39;Indonesia&#39;</span><span class="p">)</span>  <span class="c"># memanggil fungsi halo dengan argumen &#39;Indonesia&#39;</span>
+
+<span class="n">cetak_maksimal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">cetak_maksimal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variabel-lokal">
+<h2>Variabel Lokal<a class="headerlink" href="#variabel-lokal" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Jika ada variabel yang dideklarasikan didalam blok fungsi, variabel
+ini tidak ada kaitannya dengan variabel lain dengan nama yang sama
+diluar fungsi, dengan kata lain nama varabel hanya lokal untuk fungsi.
+Hal ini disebut juga <tt class="docutils literal"><span class="pre">scope</span></tt> variabel.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat17.py</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="k">def</span> <span class="nf">fungsi</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">print</span> <span class="s">&#39;merubah lokal variabel x = &#39;</span><span class="p">,</span> <span class="n">x</span>
+
+<span class="n">fungsi</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&#39;nilai x masih </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="penggunaan-statemen-global">
+<h2>Penggunaan Statemen Global<a class="headerlink" href="#penggunaan-statemen-global" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Dalam blok fungsi kita dapat mengakses variabel diluar fungsi, akses ini
+terbatas hanya akses baca. Jika blok fungsi ingin menulis variabel diluar
+fungsi anda dapat menggunaan statemen global.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat17.py</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="k">def</span> <span class="nf">fungsi</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">fungsi2</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c"># menulis ke lokal variabel</span>
+    <span class="k">print</span> <span class="s">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">fungsi3</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="k">print</span> <span class="s">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span>
+
+<span class="n">fungsi</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">&#39;nilai x = &#39;</span><span class="p">,</span> <span class="n">x</span>
+
+<span class="n">fungsi2</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">&#39;nilai x = &#39;</span><span class="p">,</span> <span class="n">x</span>
+
+<span class="n">fungsi3</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">&#39;nilai x = &#39;</span><span class="p">,</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nilai-argumen-default">
+<h2>Nilai Argumen Default<a class="headerlink" href="#nilai-argumen-default" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Untuk beberapa fungsi yang ingin menyediakan paramater opsional dan
+menggunakan nilai default jika pengguna tidak menyediakan argumen saat
+fungsi dipanggil. Anda bisa menspesifikasikan nilai default dengan tanda
+sama dengan <tt class="docutils literal"><span class="pre">=</span></tt> setelah nama parameter.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat18.py</span>
+
+<span class="k">def</span> <span class="nf">katakan</span><span class="p">(</span><span class="n">pesan</span><span class="p">,</span> <span class="n">jumlah</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">pesan</span> <span class="o">*</span> <span class="n">jumlah</span>
+
+<span class="n">katakan</span><span class="p">(</span><span class="s">&#39;Halo &#39;</span><span class="p">)</span>
+<span class="n">katakan</span><span class="p">(</span><span class="s">&#39;Halo &#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="keyword-argumen">
+<h2>Keyword Argumen<a class="headerlink" href="#keyword-argumen" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Jika anda membuat fungsi dengan banyak parameter dan anda hanya ingin
+menspesifikasikan sebagian, anda dapat menggunakan keyword argumen.
+Kita menggunakan nama (keyword) melainkan posisi (argumen posisi,
+normal pemanggilan).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat19.py</span>
+
+<span class="k">def</span> <span class="nf">fungsi</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&#39;a = &#39;</span><span class="p">,</span> <span class="n">a</span>
+    <span class="k">print</span> <span class="s">&#39;b = &#39;</span><span class="p">,</span> <span class="n">b</span>
+    <span class="k">print</span> <span class="s">&#39;c = &#39;</span><span class="p">,</span> <span class="n">c</span>
+
+<span class="n">fungsi</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">fungsi</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">fungsi</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parameter-varargs">
+<h2>Parameter VarArgs<a class="headerlink" href="#parameter-varargs" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Terkadang anda ingin membuat fungsi yang dapat menerima jumlah argumen
+yang tida tentu, hal ini dapat dilakukan menggunakan tanda bintang <tt class="docutils literal"><span class="pre">*</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat20.py</span>
+
+<span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="o">*</span><span class="n">bilangan</span><span class="p">,</span> <span class="o">**</span><span class="n">keywords</span><span class="p">):</span>
+    <span class="n">hitung</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">bil</span> <span class="ow">in</span> <span class="n">bilangan</span><span class="p">:</span>
+        <span class="n">hitung</span> <span class="o">+=</span> <span class="n">bil</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">:</span>
+        <span class="n">hitung</span> <span class="o">+=</span> <span class="n">keywords</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">hitung</span>
+
+<span class="k">print</span> <span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">total</span><span class="p">(</span><span class="n">daging</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sayur</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">buah</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">total</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">daging</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sayur</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">buah</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="statemen-return">
+<h2>Statemen Return<a class="headerlink" href="#statemen-return" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Statemen return digunakan untuk keluar dari fungsi. Kita juga
+dapat menspesifikasikan nilai kembalian. Seperti pada latihan 20
+melainkan mencetak hasil jumlah dalam blok fungsi, fungsi total mengembalikan
+nilai jumlah ke pemanggil.</p>
+</div>
+<div class="section" id="doc-string">
+<h2>Doc String<a class="headerlink" href="#doc-string" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Python memiliki fitur <em>documentation string</em>, seringnya disebut dengan
+nama <em>docstring</em>. Docstring berguna untuk mendokumentasikan program agar mudah
+untuk dipahami dan digunakan.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat21.py</span>
+
+<span class="k">def</span> <span class="nf">katakan</span><span class="p">(</span><span class="n">pesan</span><span class="p">,</span> <span class="n">jumlah</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="s">&quot;mencetak pesan &lt;pesan&gt; dengan jumlah &lt;jumlah&gt;&quot;</span>
+    <span class="k">print</span> <span class="n">pesan</span> <span class="o">*</span> <span class="n">jumlah</span>
+
+<span class="k">print</span> <span class="n">katakan</span><span class="o">.</span><span class="n">__doc__</span>
+</pre></div>
+</div>
+<p>Secara interaktif anda dapat mengakses docstring dengan fungsi <tt class="docutils literal"><span class="pre">help</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">lat21</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">lat21</span><span class="o">.</span><span class="n">katakan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             >index</a></li>
+        <li class="right" >
+          <a href="modul.html" title="Modul"
+             >berikut</a> |</li>
+        <li class="right" >
+          <a href="alur_kontrol.html" title="Alur Kontrol"
+             >sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Indocisc.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>

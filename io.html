@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Input dan Output &mdash; Workshop Python 101</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Workshop Python 101" href="index.html" />
+    <link rel="next" title="Eksepsi (Exception)" href="exception.html" />
+    <link rel="prev" title="Object-Oriented Programming (Pemrograman berorientasi Obyek)" href="oop.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="exception.html" title="Eksepsi (Exception)"
+             accesskey="N">berikut</a> |</li>
+        <li class="right" >
+          <a href="oop.html" title="Object-Oriented Programming (Pemrograman berorientasi Obyek)"
+             accesskey="P">sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Daftar Isi</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Input dan Output</a><ul>
+<li><a class="reference internal" href="#input-dari-pengguna">Input dari Pengguna</a></li>
+<li><a class="reference internal" href="#file">File</a></li>
+<li><a class="reference internal" href="#pickle">Pickle</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Topik sebelum</h4>
+  <p class="topless"><a href="oop.html"
+                        title="bab sebelum">Object-Oriented Programming (Pemrograman berorientasi Obyek)</a></p>
+  <h4>Topik berikutnya</h4>
+  <p class="topless"><a href="exception.html"
+                        title="bab berikutnya">Eksepsi (Exception)</a></p>
+  <h3>Halaman Ini</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/io.txt"
+           rel="nofollow">Lihat Sumber</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pencarian cepat</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Masukkan term pencarian atau nama modul, class atau fungsi.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="input-dan-output">
+<h1>Input dan Output<a class="headerlink" href="#input-dan-output" title="Link permanent untuk headline ini">¶</a></h1>
+<p>Akan ada situasi dimana program yang anda buat harus berinteraksi
+dengan pengguna. Sebagai contoh program anda ingin mendapatkan inputan
+pengguna kemudian mencetak hasil operasi program. Kita dapat melakukannya
+menggunakan fungsi <tt class="docutils literal"><span class="pre">raw_input</span></tt> dan statemen <tt class="docutils literal"><span class="pre">print</span></tt>.</p>
+<p>Selain itu salah satu input/output yang umum yaitu operasi file. Kemampuan
+untuk membuat, membaca dan menulis file.</p>
+<div class="section" id="input-dari-pengguna">
+<h2>Input dari Pengguna<a class="headerlink" href="#input-dari-pengguna" title="Link permanent untuk headline ini">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat36.py</span>
+
+<span class="k">def</span> <span class="nf">balik_string</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">teks</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">apakah_palindrom</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">teks</span> <span class="o">==</span> <span class="n">balik_string</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
+
+<span class="n">inputan</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Masukkan teks: &#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">apakah_palindrom</span><span class="p">(</span><span class="n">inputan</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&#39;Ya, inputan berupa palindrom&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Tidak, inputan bukan palindrom&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file">
+<h2>File<a class="headerlink" href="#file" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Anda bisa membuka dan menggunakan file untuk membaca atau
+menulis dengan membuat <tt class="docutils literal"><span class="pre">file</span></tt> obyek.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat37.py</span>
+
+<span class="n">teks</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;ini adalah isi dari file</span>
+<span class="s">yang akan ditulis</span>
+<span class="s">menggunakan python&quot;&quot;&quot;</span>
+
+<span class="c"># membuka dengan mode tulis</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;coba.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c"># default membuka file dengan mode baca</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;coba.txt&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">baris</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">baris</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c"># EOF</span>
+        <span class="k">break</span>
+    <span class="k">print</span> <span class="n">baris</span><span class="p">,</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pickle">
+<h2>Pickle<a class="headerlink" href="#pickle" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Python menyediakan modul <tt class="docutils literal"><span class="pre">pickle</span></tt> untuk menyimpan obyek Python kedalam file dan
+membaca obyek Python dari file.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat38.py</span>
+
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="n">daftar_belanja_file</span> <span class="o">=</span> <span class="s">&#39;daftar.data&#39;</span>
+<span class="n">daftar_belanja</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;apel&#39;</span><span class="p">,</span> <span class="s">&#39;mangga&#39;</span><span class="p">,</span> <span class="s">&#39;wortel&#39;</span><span class="p">,</span> <span class="s">&#39;pisang&#39;</span><span class="p">]</span>
+
+<span class="c"># membuka file penyimpanan obyek dengan mode tulis binary</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">daftar_belanja_file</span><span class="p">,</span> <span class="s">&#39;wb&#39;</span><span class="p">)</span>
+
+<span class="c"># dump obyek ke file</span>
+<span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">daftar_belanja</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c"># hapus daftar_belanja dari memori</span>
+<span class="k">del</span> <span class="n">daftar_belanja</span>
+
+<span class="c"># membaca dari file</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">daftar_belanja_file</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
+<span class="n">daftar_tersimpan</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">daftar_tersimpan</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             >index</a></li>
+        <li class="right" >
+          <a href="exception.html" title="Eksepsi (Exception)"
+             >berikut</a> |</li>
+        <li class="right" >
+          <a href="oop.html" title="Object-Oriented Programming (Pemrograman berorientasi Obyek)"
+             >sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Indocisc.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>

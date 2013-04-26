@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Operator dan Ekspresi &mdash; Workshop Python 101</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Workshop Python 101" href="index.html" />
+    <link rel="next" title="Alur Kontrol" href="alur_kontrol.html" />
+    <link rel="prev" title="Dasar" href="dasar.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="alur_kontrol.html" title="Alur Kontrol"
+             accesskey="N">berikut</a> |</li>
+        <li class="right" >
+          <a href="dasar.html" title="Dasar"
+             accesskey="P">sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Daftar Isi</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Operator dan Ekspresi</a><ul>
+<li><a class="reference internal" href="#operator">Operator</a><ul>
+<li><a class="reference internal" href="#cara-lain-operasi-matematika-dan-pengisian-variabel">Cara lain operasi matematika dan pengisian variabel</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#urutan-evaluasi">Urutan Evaluasi</a></li>
+<li><a class="reference internal" href="#mengubah-urutan-evaluasi">Mengubah Urutan Evaluasi</a></li>
+<li><a class="reference internal" href="#sifat-asosiatif">Sifat Asosiatif</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Topik sebelum</h4>
+  <p class="topless"><a href="dasar.html"
+                        title="bab sebelum">Dasar</a></p>
+  <h4>Topik berikutnya</h4>
+  <p class="topless"><a href="alur_kontrol.html"
+                        title="bab berikutnya">Alur Kontrol</a></p>
+  <h3>Halaman Ini</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/operator_dan_ekspresi.txt"
+           rel="nofollow">Lihat Sumber</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pencarian cepat</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Masukkan term pencarian atau nama modul, class atau fungsi.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="operator-dan-ekspresi">
+<h1>Operator dan Ekspresi<a class="headerlink" href="#operator-dan-ekspresi" title="Link permanent untuk headline ini">¶</a></h1>
+<p>Hampir semua statemen (baris logis) yang Anda tulis akan mengandung <em>ekspresi</em>.
+Contoh sederhana dari ekspresi adalah <tt class="docutils literal"><span class="pre">2+3</span></tt>. Sebuah ekspresi dapat diturunkan
+menjadi operator dan operand.</p>
+<p><em>Operator</em> adalah fungsi yang menjalankan sesuatu dan direpresentasikan oleh simbol,
+seperti <tt class="docutils literal"><span class="pre">+</span></tt> atau kata kunci khusus. Operator membutuhkan data untuk dioperasikan dan
+data ini disebut <em>operand</em>. Dalam kasus ini <cite>2</cite> dan <cite>3</cite> adalah operand.</p>
+<div class="section" id="operator">
+<h2>Operator<a class="headerlink" href="#operator" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Kita akan melihat operator secara singkat dan bagaimana penggunaannya:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Keterangan</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>+</td>
+<td>Menambahkan dua obyek</td>
+</tr>
+<tr class="row-odd"><td>-</td>
+<td>Mengurangi obyek dengan obyek yang lain</td>
+</tr>
+<tr class="row-even"><td>*</td>
+<td>Perkalian</td>
+</tr>
+<tr class="row-odd"><td>**</td>
+<td>Pangkat</td>
+</tr>
+<tr class="row-even"><td>/</td>
+<td>Pembagian</td>
+</tr>
+<tr class="row-odd"><td>//</td>
+<td>Pembagian bulat ke bawah</td>
+</tr>
+<tr class="row-even"><td>%</td>
+<td>Sisa hasil bagi (modulus)</td>
+</tr>
+<tr class="row-odd"><td>&lt;&lt;</td>
+<td><p class="first">(geser kiri) Menggeser bit ke sebelah kiri sesuai dengan jumlah bit yang
+ditentukan.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">2</span> <span class="pre">&lt;&lt;</span> <span class="pre">2</span></tt> menghasilkan <tt class="docutils literal"><span class="pre">8</span></tt>. <tt class="docutils literal"><span class="pre">2</span></tt> direpresentasikan <tt class="docutils literal"><span class="pre">10</span></tt> dalam
+bit (binary digit). Menggeser 2 bit kekiri akan menghasilkan
+<tt class="docutils literal"><span class="pre">1000</span></tt> yang merupakan representasi dari desimal <tt class="docutils literal"><span class="pre">8</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-even"><td>&gt;&gt;</td>
+<td><p class="first">(geser kanan) Menggeser bit ke sebelah kanan sesuai dengan jumlah bit yang
+ditentukan.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">11</span> <span class="pre">&gt;</span> <span class="pre">1</span></tt> menghasilkan <cite>5</cite>. <tt class="docutils literal"><span class="pre">11</span></tt> direpresentasikan oleh bit dengan
+<tt class="docutils literal"><span class="pre">1011</span></tt> kemudian digeser kekanan 1 bit menghasilkan <tt class="docutils literal"><span class="pre">101</span></tt> yang
+merupakan desimal angka <tt class="docutils literal"><span class="pre">5</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>&amp;</td>
+<td><p class="first">(bit-wise AND)</p>
+<p class="last">Operasi bit-wise AND dari angka (bit-wise adalah operasi angka
+berbasis bit yakni dengan <tt class="docutils literal"><span class="pre">0</span></tt> dan <tt class="docutils literal"><span class="pre">1</span></tt>). <tt class="docutils literal"><span class="pre">5</span> <span class="pre">&amp;</span> <span class="pre">3</span></tt> menghasilkan
+<tt class="docutils literal"><span class="pre">1</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-even"><td>|</td>
+<td><p class="first">(bit-wise OR)</p>
+<p class="last">Operasi bit-wise OR dari angka. <tt class="docutils literal"><span class="pre">5</span> <span class="pre">|</span> <span class="pre">3</span></tt> menghasilkan <tt class="docutils literal"><span class="pre">7</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>^</td>
+<td><p class="first">(bit-wise XOR)</p>
+<p class="last">Operasi bit-wise XOR (ekslusif OR). <tt class="docutils literal"><span class="pre">5</span> <span class="pre">^</span> <span class="pre">3</span></tt> menghasilkan <tt class="docutils literal"><span class="pre">6</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-even"><td>~</td>
+<td><p class="first">(bit-wise invert)</p>
+<p class="last">Operasi membalikkan angka bitwise dari <tt class="docutils literal"><span class="pre">x</span></tt>, menghasilkan <tt class="docutils literal"><span class="pre">-x</span> <span class="pre">-</span> <span class="pre">1</span></tt>.
+<tt class="docutils literal"><span class="pre">~5</span></tt> akan menghasilkan <tt class="docutils literal"><span class="pre">-6</span></tt>. lihat <a class="reference external" href="http://en.wikipedia.org/wiki/Two%27s_complement">two&#8217;s complement</a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>&lt;</td>
+<td><p class="first">(kurang dari)</p>
+<p class="last">Mengembalikan apakah x kurang dari y. Semua operator pembanding
+mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt> atau <tt class="docutils literal"><span class="pre">False</span></tt>.
+<tt class="docutils literal"><span class="pre">5</span> <span class="pre">&lt;</span> <span class="pre">3</span></tt> mengembalikan <tt class="docutils literal"><span class="pre">False</span></tt>, <tt class="docutils literal"><span class="pre">3</span> <span class="pre">&lt;</span> <span class="pre">5</span></tt> mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt>
+dan <tt class="docutils literal"><span class="pre">2</span> <span class="pre">&lt;</span> <span class="pre">5</span> <span class="pre">&lt;</span> <span class="pre">7</span></tt> mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-even"><td>&gt;</td>
+<td><p class="first">(lebih dari)</p>
+<p class="last">Mengembalikan apakah x lebih dari y. <tt class="docutils literal"><span class="pre">5</span> <span class="pre">&gt;</span> <span class="pre">3</span></tt> mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>&lt;=</td>
+<td><p class="first">(kurang dari atau sama dengan)</p>
+<p class="last">Mengembalikan apakah x kurang dari atau sama dengan y. <tt class="docutils literal"><span class="pre">5</span> <span class="pre">&lt;=</span> <span class="pre">5</span></tt>
+mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-even"><td>&gt;=</td>
+<td><p class="first">(lebih dari atau sama dengan)</p>
+<p class="last">Mengembalikan apakah x lebih dari atau sama dengan y. <tt class="docutils literal"><span class="pre">5</span> <span class="pre">&gt;=</span> <span class="pre">5</span></tt>
+mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>==</td>
+<td><p class="first">(sama dengan)</p>
+<p class="last">Membandingkan apakah kedua obyek sama. <tt class="docutils literal"><span class="pre">2</span> <span class="pre">==</span> <span class="pre">2</span></tt> mengembalikan
+<tt class="docutils literal"><span class="pre">True</span></tt>, <tt class="docutils literal"><span class="pre">'nama'</span> <span class="pre">==</span> <span class="pre">'Nama'</span></tt> mengembalikan <tt class="docutils literal"><span class="pre">False</span></tt>,
+<tt class="docutils literal"><span class="pre">'nama'</span> <span class="pre">==</span> <span class="pre">'nama'</span></tt> mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-even"><td>!=</td>
+<td><p class="first">(tidak sama dengan)</p>
+<p class="last">Membandingkan apakah kedua obyek berbeda. <tt class="docutils literal"><span class="pre">2</span> <span class="pre">!=</span> <span class="pre">3</span></tt> mengembalikan
+<tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>not</td>
+<td><p class="first">(boolean NOT)</p>
+<p class="last">Jika x bernilai <tt class="docutils literal"><span class="pre">True</span></tt> akan mengembalikan <tt class="docutils literal"><span class="pre">False</span></tt>. Jika x bernilai
+<tt class="docutils literal"><span class="pre">False</span></tt> akan mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt>. <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">True;</span> <span class="pre">not</span> <span class="pre">x</span></tt>
+mengembalikan <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+</td>
+</tr>
+<tr class="row-even"><td>and</td>
+<td><p class="first">(boolean AND)</p>
+<p><tt class="docutils literal"><span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span></tt> mengembalikan <tt class="docutils literal"><span class="pre">False</span></tt> jika x bernilai <tt class="docutils literal"><span class="pre">False</span></tt>, selain
+itu akan mengembalikan nilai <tt class="docutils literal"><span class="pre">y</span></tt>.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">False;</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">True;</span> <span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span></tt> akan mengembalikan <tt class="docutils literal"><span class="pre">False</span></tt> karena
+<tt class="docutils literal"><span class="pre">x</span></tt> bernilai <tt class="docutils literal"><span class="pre">False</span></tt>. Pada kasus ini Python tidak akan
+mengevaluasi <tt class="docutils literal"><span class="pre">y</span></tt> karena nilai <tt class="docutils literal"><span class="pre">x</span></tt>. Hal ini disebut
+<em>short-circuit</em> evaluasi.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>or</td>
+<td><p class="first">(boolean OR)</p>
+<p>Jika <tt class="docutils literal"><span class="pre">x</span></tt> bernilai True, <tt class="docutils literal"><span class="pre">x</span> <span class="pre">or</span> <span class="pre">y</span></tt> akan mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt>,
+selain itu akan mengembalikan nilai <tt class="docutils literal"><span class="pre">y</span></tt>.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">True;</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">False;</span> <span class="pre">x</span> <span class="pre">or</span> <span class="pre">y</span></tt> mengembalikan <tt class="docutils literal"><span class="pre">True</span></tt>.
+<em>short-circuit</em> evaluasi berlaku juga disini.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat6.py</span>
+<span class="c"># Operator dan ekspresi</span>
+
+<span class="n">bilangan1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">bilangan2</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">print</span> <span class="s">&#39;bil1 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span>
+<span class="k">print</span> <span class="s">&#39;bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan2</span>
+
+<span class="k">print</span> <span class="s">&#39;bil1 + bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">+</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 - bil2 = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bilangan1</span> <span class="o">-</span> <span class="n">bilangan2</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;bil1 * bil2 = {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bilangan1</span> <span class="o">*</span> <span class="n">bilangan2</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;bil1 ** bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">**</span> <span class="n">bilangan2</span>
+
+<span class="n">bilangan1</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="k">print</span> <span class="s">&#39;bil1 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span>
+<span class="k">print</span> <span class="s">&#39;bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan2</span>
+
+<span class="k">print</span> <span class="s">&#39;bil1 / bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">/</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 // bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">//</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 % bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">%</span> <span class="n">bilangan2</span>
+
+<span class="k">print</span> <span class="s">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">80</span>
+
+<span class="n">bilangan1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">print</span> <span class="s">&#39;bil1 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span>
+<span class="k">print</span> <span class="s">&#39;bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan2</span>
+
+<span class="k">print</span> <span class="s">&#39;bil1 &lt;&lt; bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">&lt;&lt;</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 &gt;&gt; bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">&gt;&gt;</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 &amp; bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">&amp;</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 | bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">|</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 ^ bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">^</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;~bil1 = &#39;</span><span class="p">,</span> <span class="o">~</span><span class="n">bilangan1</span>
+
+<span class="k">print</span> <span class="s">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">80</span>
+
+<span class="k">print</span> <span class="s">&#39;bil1 &lt; bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">&lt;</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 &gt; bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">&gt;</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 &lt;= bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">&lt;=</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 &gt;= bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">&gt;=</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 == bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">==</span> <span class="n">bilangan2</span>
+<span class="k">print</span> <span class="s">&#39;bil1 != bil2 = &#39;</span><span class="p">,</span> <span class="n">bilangan1</span> <span class="o">!=</span> <span class="n">bilangan2</span>
+
+<span class="k">print</span> <span class="s">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">80</span>
+
+<span class="k">print</span> <span class="s">&#39;not True = &#39;</span><span class="p">,</span> <span class="ow">not</span> <span class="bp">True</span>
+<span class="k">print</span> <span class="s">&#39;True and False = &#39;</span><span class="p">,</span> <span class="bp">True</span> <span class="ow">and</span> <span class="bp">False</span>
+<span class="k">print</span> <span class="s">&#39;True or False = &#39;</span><span class="p">,</span> <span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<div class="section" id="cara-lain-operasi-matematika-dan-pengisian-variabel">
+<h3>Cara lain operasi matematika dan pengisian variabel<a class="headerlink" href="#cara-lain-operasi-matematika-dan-pengisian-variabel" title="Link permanent untuk headline ini">¶</a></h3>
+<p>Ketika melakukan operasi matematika, kita sering setelah dilakukan operasi hasil
+tersebut kita simpan dalam variabel. Di python ada jalan pintas untuk melakukan
+operasi dan melakukan <em>assignment</em>.</p>
+<p>Anda bisa menulis:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>sebagai:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">*=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Berikut latihan 7 untuk menghitung uang kembalian.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat7.py</span>
+
+<span class="n">total_uang</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">harga_barang</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">diskon</span> <span class="o">=</span> <span class="mf">0.10</span>
+
+<span class="c"># harga barang setelah diskon</span>
+<span class="n">harga_barang</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">diskon</span><span class="p">)</span>
+
+<span class="n">total_uang</span> <span class="o">-=</span> <span class="n">harga_barang</span>
+
+<span class="k">print</span> <span class="s">&#39;total uang = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">total_uang</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="urutan-evaluasi">
+<h2>Urutan Evaluasi<a class="headerlink" href="#urutan-evaluasi" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Jika ada rantaian ekspresi seperti <tt class="docutils literal"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></tt>, apakah penambahan dilakukan
+terlebih dahulu atau perkalian? Saat pelajaran matematika kita diajari bahwa
+perkalian harus dikerjakan terlebih dahulu. Hal ini menandakan perkalian
+mempunyai urutan lebih tinggi daripada penambahan.</p>
+<p>Berikut tabel urutan evaluasi ekspresi dalam Python, dari terrendah sampai
+tertinggi.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Keterangan</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>lamda</td>
+<td>Ekspresi <tt class="docutils literal"><span class="pre">lambda</span></tt></td>
+</tr>
+<tr class="row-odd"><td>or</td>
+<td>Boolean OR</td>
+</tr>
+<tr class="row-even"><td>and</td>
+<td>Boolean AND</td>
+</tr>
+<tr class="row-odd"><td>not x</td>
+<td>Boolean NOT</td>
+</tr>
+<tr class="row-even"><td>in, not in</td>
+<td>Tes Keanggotaan</td>
+</tr>
+<tr class="row-odd"><td>is, is not</td>
+<td>Tes Identitas</td>
+</tr>
+<tr class="row-even"><td>&lt;, &lt;=, &gt;, &gt;=, !=, ==</td>
+<td>Perbandingan</td>
+</tr>
+<tr class="row-odd"><td>|</td>
+<td>Bitwise OR</td>
+</tr>
+<tr class="row-even"><td>^</td>
+<td>Bitwise XOR</td>
+</tr>
+<tr class="row-odd"><td>&amp;</td>
+<td>Bitwise AND</td>
+</tr>
+<tr class="row-even"><td>&lt;&lt;, &gt;&gt;</td>
+<td>Shift</td>
+</tr>
+<tr class="row-odd"><td>+, -</td>
+<td>Penambahan dan Pengurangan</td>
+</tr>
+<tr class="row-even"><td>*, /, //, %</td>
+<td>Perkalian, Pembagian, Pembagian ke bawah, mod</td>
+</tr>
+<tr class="row-odd"><td>+x, -x</td>
+<td>Positif, Negatif</td>
+</tr>
+<tr class="row-even"><td>~x</td>
+<td>Bitwise NOT / inverse</td>
+</tr>
+<tr class="row-odd"><td>**</td>
+<td>Pangkat</td>
+</tr>
+<tr class="row-even"><td>x.attribute</td>
+<td>Referensi atribut</td>
+</tr>
+<tr class="row-odd"><td>x[index]</td>
+<td>Akses item</td>
+</tr>
+<tr class="row-even"><td>x[index1:index2]</td>
+<td>Slicing</td>
+</tr>
+<tr class="row-odd"><td>f(argument ...)</td>
+<td>Pemanggilan fungsi</td>
+</tr>
+<tr class="row-even"><td>(ekspresi, ...)</td>
+<td>literal tuple</td>
+</tr>
+<tr class="row-odd"><td>[ekspresi, ...]</td>
+<td>literal list</td>
+</tr>
+<tr class="row-even"><td>{key:value, ...}</td>
+<td>literal dictionary</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mengubah-urutan-evaluasi">
+<h2>Mengubah Urutan Evaluasi<a class="headerlink" href="#mengubah-urutan-evaluasi" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Untuk membuat ekspresi lebih mudah dibaca, kita dapat menggunakan tanda kurung.
+Sebagai contoh, <tt class="docutils literal"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">(3</span> <span class="pre">*</span> <span class="pre">4)</span></tt> lebih mudah dipahami daripada <tt class="docutils literal"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></tt>
+dimana pembaca harus mengetahui urutan evaluasi operator. Namun pemakaian tanda
+kurung jangan terlalu berlebihan seperti <tt class="docutils literal"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">(3</span> <span class="pre">*</span> <span class="pre">4))</span></tt>.</p>
+<p>Selain itu, tanda kurung dapat mengubah urutan evaluasi operator. Sebagai contoh
+<tt class="docutils literal"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">4</span></tt>, operasi penambahan akan dievaluasi terlebih dahulu.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat8.py</span>
+
+<span class="n">hasil</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="k">print</span> <span class="s">&#39;2 + 3 * 4 = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">hasil</span>
+
+<span class="n">hasil</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="k">print</span> <span class="s">&#39;(2 + 3) * 4 = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">hasil</span>
+
+<span class="n">hasil</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="k">print</span> <span class="s">&#39;2 / 3 * 4 = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">hasil</span>
+
+<span class="n">hasil</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="k">print</span> <span class="s">&#39;2.0 / 3 * 4 = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">hasil</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sifat-asosiatif">
+<h2>Sifat Asosiatif<a class="headerlink" href="#sifat-asosiatif" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Operator dengan level urutan evaluasi yang sama akan dievaluasi dari kiri ke kanan.
+Sebagai contoh <tt class="docutils literal"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></tt> akan dievaluasi sebagai <tt class="docutils literal"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">+</span> <span class="pre">4</span></tt>. Beberapa
+operator seperti pengisian nilai (assignment) mempunyai sifat asosiatif dari kanan
+ke kiri, contoh: <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">c</span></tt> akan dievaluasi <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">(b</span> <span class="pre">=</span> <span class="pre">c)</span></tt>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             >index</a></li>
+        <li class="right" >
+          <a href="alur_kontrol.html" title="Alur Kontrol"
+             >berikut</a> |</li>
+        <li class="right" >
+          <a href="dasar.html" title="Dasar"
+             >sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Indocisc.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>

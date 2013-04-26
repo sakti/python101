@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Modul &mdash; Workshop Python 101</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Workshop Python 101" href="index.html" />
+    <link rel="next" title="Struktur Data" href="struktur_data.html" />
+    <link rel="prev" title="Fungsi (Function)" href="fungsi.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="struktur_data.html" title="Struktur Data"
+             accesskey="N">berikut</a> |</li>
+        <li class="right" >
+          <a href="fungsi.html" title="Fungsi (Function)"
+             accesskey="P">sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Daftar Isi</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Modul</a><ul>
+<li><a class="reference internal" href="#byte-compiled-file-pyc">Byte-compiled (file .pyc)</a></li>
+<li><a class="reference internal" href="#statemen-from-import">Statemen from ... import</a></li>
+<li><a class="reference internal" href="#nama-modul">Nama Modul</a></li>
+<li><a class="reference internal" href="#fungsi-dir">Fungsi dir</a></li>
+<li><a class="reference internal" href="#package">Package</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Topik sebelum</h4>
+  <p class="topless"><a href="fungsi.html"
+                        title="bab sebelum">Fungsi (Function)</a></p>
+  <h4>Topik berikutnya</h4>
+  <p class="topless"><a href="struktur_data.html"
+                        title="bab berikutnya">Struktur Data</a></p>
+  <h3>Halaman Ini</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/modul.txt"
+           rel="nofollow">Lihat Sumber</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pencarian cepat</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Masukkan term pencarian atau nama modul, class atau fungsi.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="modul">
+<h1>Modul<a class="headerlink" href="#modul" title="Link permanent untuk headline ini">¶</a></h1>
+<p>Anda dapat menggunakan kode ulang dalam program menggunakan fungsi.
+Bagaimana cara menggunakan fungsi yang ada di file .py yang berbeda?
+jawabnya adalah modul.</p>
+<p>File latihan yang sudah anda buat dari <tt class="docutils literal"><span class="pre">lat1.py</span></tt> sampai
+<tt class="docutils literal"><span class="pre">lat21.py</span></tt> merupakan modul. Untuk menggunakan fungsi atau variabel
+yang ada di file tersebut kita dapat melakukan <tt class="docutils literal"><span class="pre">import</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">lat21</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">lat21</span><span class="o">.</span><span class="n">katakan</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">AAAAAAAAAA</span>
+</pre></div>
+</div>
+<p>Selain modul <tt class="docutils literal"><span class="pre">.py</span></tt> kita dapat membuat modul dengan bahasa pemrograman C.</p>
+<div class="section" id="byte-compiled-file-pyc">
+<h2>Byte-compiled (file .pyc)<a class="headerlink" href="#byte-compiled-file-pyc" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Setelah mencoba modul <tt class="docutils literal"><span class="pre">lat21</span></tt> (tanpa <tt class="docutils literal"><span class="pre">.py</span></tt>). Anda akan menemukan
+file <tt class="docutils literal"><span class="pre">lat21.pyc</span></tt> pada direktori yang sama.</p>
+<p>Jika anda melakukan <tt class="docutils literal"><span class="pre">import</span></tt> suatu modul, modul tersebut akan di
+<em>interpret</em> terlebih dahulu. Untuk optimisasi python akan membuat file
+byte-compiled modul tersebut dalam file <tt class="docutils literal"><span class="pre">.pyc</span></tt> sehingga import
+modul tidak harus melakukan <em>compile</em>.</p>
+</div>
+<div class="section" id="statemen-from-import">
+<h2>Statemen from ... import<a class="headerlink" href="#statemen-from-import" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Anda dapat mengakses fungsi, variabel atau class dalam modul
+menggunakan berbagai cara.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat22.py</span>
+
+<span class="kn">import</span> <span class="nn">lat21</span>
+<span class="kn">from</span> <span class="nn">lat21</span> <span class="kn">import</span> <span class="n">katakan</span>
+<span class="kn">from</span> <span class="nn">lat21</span> <span class="kn">import</span> <span class="n">katakan</span> <span class="k">as</span> <span class="n">hi</span>
+
+<span class="k">print</span> <span class="n">lat21</span><span class="o">.</span><span class="n">katakan</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">katakan</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">hi</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nama-modul">
+<h2>Nama Modul<a class="headerlink" href="#nama-modul" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Setiap module memiliki nama, anda bisa mengakses nama ini
+menggunakan variabel <tt class="docutils literal"><span class="pre">__nama__</span></tt>. Kita dapat tahu apakah
+modul ini dijalankan <em>standalone</em> atau di <em>import</em> oleh
+modul lain.</p>
+<p>Jika modul kita dijalankan <em>standalone</em> maka isi variabel
+<tt class="docutils literal"><span class="pre">__nama__</span></tt> berisi <tt class="docutils literal"><span class="pre">__main__</span></tt></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat23.py</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c"># akan dijalankan jika dieksekusi secara langsung</span>
+    <span class="c"># bukan import</span>
+    <span class="k">print</span> <span class="s">&#39;nama mudul ini : &#39;</span><span class="p">,</span> <span class="n">__name__</span>
+
+    <span class="kn">import</span> <span class="nn">lat21</span>
+    <span class="k">print</span> <span class="s">&#39;nama modul yang di import : &#39;</span><span class="p">,</span> <span class="n">lat21</span><span class="o">.</span><span class="n">__name__</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fungsi-dir">
+<h2>Fungsi dir<a class="headerlink" href="#fungsi-dir" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Untuk melihat isi dalam suatu modul kita dapat menggunakan
+fungsi builtin <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+<span class="go">[&#39;__displayhook__&#39;, &#39;__doc__&#39;, &#39;__egginsert&#39;, &#39;__excepthook__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__plen&#39;, &#39;__stderr__&#39;, &#39;__stdin__&#39;, &#39;__stdout__&#39;, &#39;_clear_type_cache&#39;, &#39;_current_frames&#39;, &#39;_getframe&#39;, &#39;_mercurial&#39;, &#39;api_version&#39;, &#39;argv&#39;, &#39;builtin_module_names&#39;, &#39;byteorder&#39;, &#39;call_tracing&#39;, &#39;callstats&#39;, &#39;copyright&#39;, &#39;displayhook&#39;, &#39;dont_write_bytecode&#39;, &#39;exc_clear&#39;, &#39;exc_info&#39;, &#39;exc_type&#39;, &#39;excepthook&#39;, &#39;exec_prefix&#39;, &#39;executable&#39;, &#39;exit&#39;, &#39;flags&#39;, &#39;float_info&#39;, &#39;float_repr_style&#39;, &#39;getcheckinterval&#39;, &#39;getdefaultencoding&#39;, &#39;getdlopenflags&#39;, &#39;getfilesystemencoding&#39;, &#39;getprofile&#39;, &#39;getrecursionlimit&#39;, &#39;getrefcount&#39;, &#39;getsizeof&#39;, &#39;gettrace&#39;, &#39;hexversion&#39;, &#39;last_traceback&#39;, &#39;last_type&#39;, &#39;last_value&#39;, &#39;long_info&#39;, &#39;maxint&#39;, &#39;maxsize&#39;, &#39;maxunicode&#39;, &#39;meta_path&#39;, &#39;modules&#39;, &#39;path&#39;, &#39;path_hooks&#39;, &#39;path_importer_cache&#39;, &#39;platform&#39;, &#39;prefix&#39;, &#39;ps1&#39;, &#39;ps2&#39;, &#39;py3kwarning&#39;, &#39;pydebug&#39;, &#39;setcheckinterval&#39;, &#39;setdlopenflags&#39;, &#39;setprofile&#39;, &#39;setrecursionlimit&#39;, &#39;settrace&#39;, &#39;stderr&#39;, &#39;stdin&#39;, &#39;stdout&#39;, &#39;subversion&#39;, &#39;version&#39;, &#39;version_info&#39;, &#39;warnoptions&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="package">
+<h2>Package<a class="headerlink" href="#package" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Sekarang anda dapat mengamati struktur program Python. Variabel
+ada di dalam fungsi. Fungsi dan variabel global ada dalam modul.
+Bagaimana caranya mengorganisasikan modul? jawabannya adalah
+<em>Package</em>.</p>
+<p><em>Package</em> adalah direktori yang berisi modul python dan file
+spesial <tt class="docutils literal"><span class="pre">__init__.py</span></tt>. File <tt class="docutils literal"><span class="pre">__init__.py</span></tt> menandakan bahwa
+direktori ini merupakan <em>package</em> Python.</p>
+<p>Untuk latihan kali ini, kita buat direktori lat24. Direktor ini
+berisi</p>
+<p>__init__.py</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># __init__.py</span>
+<span class="k">print</span> <span class="s">&quot;di jalankan ketika package di import&quot;</span>
+</pre></div>
+</div>
+<p>kata.py</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># kata.py</span>
+<span class="k">def</span> <span class="nf">balik_huruf</span><span class="p">(</span><span class="n">kata</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">kata</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>nomor.py</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># nomor.py</span>
+<span class="k">def</span> <span class="nf">lebih_besar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Pada direktori latihan kita buat file <tt class="docutils literal"><span class="pre">lat24tes.py</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat24tes.py</span>
+<span class="kn">from</span> <span class="nn">lat24</span> <span class="kn">import</span> <span class="n">kata</span>
+<span class="kn">from</span> <span class="nn">lat24</span> <span class="kn">import</span> <span class="n">nomor</span>
+
+<span class="k">print</span> <span class="n">kata</span><span class="o">.</span><span class="n">balik_huruf</span><span class="p">(</span><span class="s">&#39;selamat datang&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">nomor</span><span class="o">.</span><span class="n">lebih_besar</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             >index</a></li>
+        <li class="right" >
+          <a href="struktur_data.html" title="Struktur Data"
+             >berikut</a> |</li>
+        <li class="right" >
+          <a href="fungsi.html" title="Fungsi (Function)"
+             >sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Indocisc.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Library Standar (Standard Library) &mdash; Workshop Python 101</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Workshop Python 101" href="index.html" />
+    <link rel="next" title="Referensi" href="referensi.html" />
+    <link rel="prev" title="Eksepsi (Exception)" href="exception.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="referensi.html" title="Referensi"
+             accesskey="N">berikut</a> |</li>
+        <li class="right" >
+          <a href="exception.html" title="Eksepsi (Exception)"
+             accesskey="P">sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Daftar Isi</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Library Standar (Standard Library)</a><ul>
+<li><a class="reference internal" href="#module-getpass">Module getpass</a></li>
+<li><a class="reference internal" href="#modul-random">Modul random</a></li>
+<li><a class="reference internal" href="#modul-datetime">Modul datetime</a></li>
+<li><a class="reference internal" href="#modul-math">Modul math</a></li>
+<li><a class="reference internal" href="#modul-sys">Modul sys</a></li>
+<li><a class="reference internal" href="#pymotw-python-module-of-the-week">PYMOTW (Python Module of The Week)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Topik sebelum</h4>
+  <p class="topless"><a href="exception.html"
+                        title="bab sebelum">Eksepsi (Exception)</a></p>
+  <h4>Topik berikutnya</h4>
+  <p class="topless"><a href="referensi.html"
+                        title="bab berikutnya">Referensi</a></p>
+  <h3>Halaman Ini</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/standard_library.txt"
+           rel="nofollow">Lihat Sumber</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pencarian cepat</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Masukkan term pencarian atau nama modul, class atau fungsi.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="library-standar-standard-library">
+<h1>Library Standar (Standard Library)<a class="headerlink" href="#library-standar-standard-library" title="Link permanent untuk headline ini">¶</a></h1>
+<div class="section" id="module-getpass">
+<h2>Module getpass<a class="headerlink" href="#module-getpass" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Mendapatkan password pengguna tanpa <em>echo</em> kembali ke pengguna.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># contoh penggunaan modul getpass</span>
+
+<span class="kn">import</span> <span class="nn">getpass</span>
+
+<span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">&#39;Password anda : &#39;</span><span class="p">,</span> <span class="n">password</span>
+
+<span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s">&#39;Inputkan password anda :&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;Password anda : &#39;</span><span class="p">,</span> <span class="n">Password</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modul-random">
+<h2>Modul random<a class="headerlink" href="#modul-random" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Modul <tt class="docutils literal"><span class="pre">random</span></tt> menyediakan <em>fast pseudorandom number generator</em>
+berdasarkan algoritma <em>Mersenne Twister</em>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># contoh penggunaan modul random</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">print</span> <span class="s">&#39;bilangan random antara 0&lt;= n &lt; 1.0 : &#39;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">&#39;bilangan random antara 0&lt;= n &lt; 1.0 : &#39;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">&#39;bilangan random antara 0&lt;= n &lt; 1.0 : &#39;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+
+<span class="c"># random integer</span>
+<span class="k">print</span> <span class="s">&#39;bilangan random antara 1&lt;= n &lt;= 100 : &#39;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;bilangan random antara 1&lt;= n &lt;= 100 : &#39;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;bilangan random antara 1&lt;= n &lt;= 100 : &#39;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modul-datetime">
+<h2>Modul datetime<a class="headerlink" href="#modul-datetime" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Modul <tt class="docutils literal"><span class="pre">datetime</span></tt> berisi fungsi dan class untuk operasi tanggal dan waktu.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># contoh penggunaan module datetime</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">sekarang</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="n">tanggal</span> <span class="o">=</span> <span class="n">sekarang</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+<span class="n">waktu</span> <span class="o">=</span> <span class="n">sekarang</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="s">&#39;Hari : &#39;</span><span class="p">,</span> <span class="n">tanggal</span><span class="o">.</span><span class="n">day</span>
+<span class="k">print</span> <span class="s">&#39;Bulan : &#39;</span><span class="p">,</span> <span class="n">tanggal</span><span class="o">.</span><span class="n">month</span>
+<span class="k">print</span> <span class="s">&#39;Tahun : &#39;</span><span class="p">,</span> <span class="n">tanggal</span><span class="o">.</span><span class="n">year</span>
+<span class="k">print</span> <span class="s">&#39;Jam : &#39;</span><span class="p">,</span> <span class="n">waktu</span><span class="o">.</span><span class="n">hour</span>
+<span class="k">print</span> <span class="s">&#39;Menit : &#39;</span><span class="p">,</span> <span class="n">waktu</span><span class="o">.</span><span class="n">minute</span>
+<span class="k">print</span> <span class="s">&#39;Detik : &#39;</span><span class="p">,</span> <span class="n">waktu</span><span class="o">.</span><span class="n">second</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">sekarang2</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="n">delta</span> <span class="o">=</span> <span class="n">sekarang2</span> <span class="o">-</span> <span class="n">sekarang</span>
+
+<span class="k">print</span> <span class="s">&#39;selisih detik : &#39;</span><span class="p">,</span> <span class="n">delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modul-math">
+<h2>Modul math<a class="headerlink" href="#modul-math" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Modul <tt class="docutils literal"><span class="pre">math</span></tt> berisi fungsi-fungsi matematika.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># contoh penggunaan modul math</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c"># konstanta</span>
+<span class="k">print</span> <span class="s">&#39;pi = &#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="k">print</span> <span class="s">&#39;e = &#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span>
+
+<span class="c"># faktorial, n!</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">! = </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="c"># pangkat</span>
+<span class="k">print</span> <span class="s">&#39;2 pangkat 12 = &#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="c"># akar kuadrat</span>
+<span class="k">print</span> <span class="s">&#39;akar kuadrat 10 = &#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c"># logaritma</span>
+<span class="k">print</span> <span class="s">&#39;log 8 = &#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;log 8 basis 10 = &#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;log 8 basis 10 = &#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c"># trigonometri</span>
+<span class="k">print</span> <span class="s">&#39;sin 90 derajat = &#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">90</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modul-sys">
+<h2>Modul sys<a class="headerlink" href="#modul-sys" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Modul <tt class="docutils literal"><span class="pre">sys</span></tt> digunakan untuk mengakses konfigurasi interpreter pada saat
+runtime dan berinteraksi dengan <tt class="docutils literal"><span class="pre">environment</span></tt> sistem operasi.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># contoh penggunaan modul sys / System-specific Configuration</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c"># argumen terminal</span>
+<span class="k">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span>
+<span class="c"># versi python</span>
+<span class="k">print</span> <span class="s">&#39;versi python: &#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span>
+<span class="c"># platform</span>
+<span class="k">print</span> <span class="s">&#39;platform : &#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span>
+<span class="c"># letak python interpreter</span>
+<span class="k">print</span> <span class="s">&#39;executable : &#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span>
+<span class="c"># byteorder</span>
+<span class="k">print</span> <span class="s">&#39;byteorder : &#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">byteorder</span>
+
+<span class="c"># module yang diimport</span>
+<span class="k">print</span> <span class="s">&#39;modul yang diimport : &#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+<span class="c"># module built-in</span>
+<span class="k">print</span> <span class="s">&#39;modul built-in : &#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">builtin_module_names</span>
+
+<span class="c"># path import</span>
+<span class="k">print</span> <span class="s">&#39;path import : &#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pymotw-python-module-of-the-week">
+<h2>PYMOTW (Python Module of The Week)<a class="headerlink" href="#pymotw-python-module-of-the-week" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Masih ada banyak modul yang ada di Python. Untuk menjelajahi
+modul-modul yang tersedia di Python anda dapat membaca
+<a class="reference external" href="http://pymotw.com/2/">Python Module of The Week</a> yang membahas modul python satu per satu.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             >index</a></li>
+        <li class="right" >
+          <a href="referensi.html" title="Referensi"
+             >berikut</a> |</li>
+        <li class="right" >
+          <a href="exception.html" title="Eksepsi (Exception)"
+             >sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Indocisc.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>

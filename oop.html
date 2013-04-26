@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Object-Oriented Programming (Pemrograman berorientasi Obyek) &mdash; Workshop Python 101</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Workshop Python 101" href="index.html" />
+    <link rel="next" title="Input dan Output" href="io.html" />
+    <link rel="prev" title="Struktur Data" href="struktur_data.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="io.html" title="Input dan Output"
+             accesskey="N">berikut</a> |</li>
+        <li class="right" >
+          <a href="struktur_data.html" title="Struktur Data"
+             accesskey="P">sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Daftar Isi</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Object-Oriented Programming (Pemrograman berorientasi Obyek)</a><ul>
+<li><a class="reference internal" href="#this-self">this -&gt; self</a></li>
+<li><a class="reference internal" href="#class">Class</a></li>
+<li><a class="reference internal" href="#method-obyek">Method Obyek</a></li>
+<li><a class="reference internal" href="#method-init">Method init</a></li>
+<li><a class="reference internal" href="#variabel-class-dan-variabel-obyek-instance">Variabel Class dan Variabel Obyek (Instance)</a></li>
+<li><a class="reference internal" href="#inheritance">Inheritance</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Topik sebelum</h4>
+  <p class="topless"><a href="struktur_data.html"
+                        title="bab sebelum">Struktur Data</a></p>
+  <h4>Topik berikutnya</h4>
+  <p class="topless"><a href="io.html"
+                        title="bab berikutnya">Input dan Output</a></p>
+  <h3>Halaman Ini</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/oop.txt"
+           rel="nofollow">Lihat Sumber</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pencarian cepat</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Masukkan term pencarian atau nama modul, class atau fungsi.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="object-oriented-programming-pemrograman-berorientasi-obyek">
+<h1>Object-Oriented Programming (Pemrograman berorientasi Obyek)<a class="headerlink" href="#object-oriented-programming-pemrograman-berorientasi-obyek" title="Link permanent untuk headline ini">¶</a></h1>
+<p>Pada program yang selama ini kita buat, kita mendesain program
+kita berdasarkan fungsi (blok statemen yang memanipulasi data).
+Hal ini disebut pemrograman <em>procedure-oriented</em>.</p>
+<p>Ada cara lain untuk mengorganisasi program dengan menggabungkan
+data dan operasi yang dibungkus dalam suatu obyek yaitu paradigma
+pemrograman berorientasi obyek.</p>
+<p>Obyek memiliki field berupa variabel obyek dan method berupa
+fungsi obyek. Keduanya disebut atribut obyek. Class juga dapat
+memiliki field class (variabel class) dan method class. Class didefinisikan dengan
+keyword <tt class="docutils literal"><span class="pre">class</span></tt>.</p>
+<div class="section" id="this-self">
+<h2>this -&gt; self<a class="headerlink" href="#this-self" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Dalam deklarasi method pada class terdapat perbedaan yaitu ada parameter
+pertama yang harus ditambahkan pada parameter fungsi. Parameter ini diberi nama
+<tt class="docutils literal"><span class="pre">self</span></tt>, nilai dari parameter ini menunjuk ke obyek / instance itu sendiri.</p>
+<div class="admonition note">
+<p class="first admonition-title">Catatan</p>
+<p class="last">programmer Java, C# dan C++ terbiasa dengan keyword <tt class="docutils literal"><span class="pre">this</span></tt>. Bedanya
+untuk Python variabel ini dikirim ke method secara eksplisit.</p>
+</div>
+<p>Nilai self ini disediakan oleh Python. Contoh, ada class <tt class="docutils literal"><span class="pre">ClassSaya</span></tt>
+yang mempunyai instance obyek <tt class="docutils literal"><span class="pre">obyeksaya</span></tt>. Ketika method dipanggil
+pada obyek <tt class="docutils literal"><span class="pre">obyeksaya.method(arg1,</span> <span class="pre">arg2)</span></tt>, secara otomatis diubah oleh
+Python menjadi <tt class="docutils literal"><span class="pre">ClassSaya.method(obyeksaya,</span> <span class="pre">arg1,</span> <span class="pre">arg2)</span></tt>.</p>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Berikut contoh class yang sederhana.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat31.py</span>
+
+<span class="k">class</span> <span class="nc">Orang</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">org</span> <span class="o">=</span> <span class="n">Orang</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>jika dijalankan akan mengeluarkan</p>
+<div class="highlight-bash"><div class="highlight"><pre>&lt;__main__.Orang instance at 0x7f67decc9bd8&gt;
+</pre></div>
+</div>
+<p>Menunjukkan variabel <tt class="docutils literal"><span class="pre">org</span></tt> adalah instance class <tt class="docutils literal"><span class="pre">Orang</span></tt> pada alamat memory <tt class="docutils literal"><span class="pre">0x7f67decc9bd8</span></tt>.</p>
+</div>
+<div class="section" id="method-obyek">
+<h2>Method Obyek<a class="headerlink" href="#method-obyek" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Berikut contoh deklarasi method pada class.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat32.py</span>
+
+<span class="k">class</span> <span class="nc">Orang</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">katakanHalo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&#39;Halo, apa kabar?&#39;</span>
+
+<span class="n">org</span> <span class="o">=</span> <span class="n">Orang</span><span class="p">()</span>
+<span class="n">org</span><span class="o">.</span><span class="n">katakanHalo</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Catatan</p>
+<p class="last">Perhatikan walaupun method <tt class="docutils literal"><span class="pre">katakanHalo</span></tt> tidak membaca parameter, masih ada <tt class="docutils literal"><span class="pre">self</span></tt> pada
+deklarasi method.</p>
+</div>
+</div>
+<div class="section" id="method-init">
+<h2>Method init<a class="headerlink" href="#method-init" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Ada nama-nama method spesial pada class Python. <tt class="docutils literal"><span class="pre">__init__</span></tt> adalah salah satunya, method
+ini akan dijalankan ketika obyek dibuat. Method ini berguna untuk melakukan inisialisasi.
+Perhatikan garis bawah dua kali di awal dan di akhir method (<em>double underscore, dunder</em>).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat33.py</span>
+
+<span class="k">class</span> <span class="nc">Orang</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nama</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nama</span> <span class="o">=</span> <span class="n">nama</span>
+
+    <span class="k">def</span> <span class="nf">katakanHalo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&#39;Halo, nama saya </span><span class="si">%s</span><span class="s">, apa kabar?&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nama</span>
+
+<span class="n">org</span> <span class="o">=</span> <span class="n">Orang</span><span class="p">(</span><span class="s">&#39;budi&#39;</span><span class="p">)</span>
+<span class="n">org</span><span class="o">.</span><span class="n">katakanHalo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variabel-class-dan-variabel-obyek-instance">
+<h2>Variabel Class dan Variabel Obyek (Instance)<a class="headerlink" href="#variabel-class-dan-variabel-obyek-instance" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Variabel Class yaitu variabel yang dimiliki oleh class, sedangkan
+variabel obyek adalah variabel yang yang dimiliki oleh tiap-tiap obyek
+instance dari class.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat34.py</span>
+
+<span class="k">class</span> <span class="nc">Orang</span><span class="p">:</span>
+    <span class="c"># variabel class, untuk menghitung jumlah orang</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nama</span><span class="p">):</span>
+        <span class="c"># inisiasi data, data yang dibuat pada self merupakan variabel obyek</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nama</span> <span class="o">=</span> <span class="n">nama</span>
+
+        <span class="c"># ketika ada orang yang dibuat, tambahkan total orang</span>
+        <span class="n">Orang</span><span class="o">.</span><span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># kurangi total orang jika obyek dihapus</span>
+        <span class="n">Orang</span><span class="o">.</span><span class="n">total</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">katakanHalo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&#39;Halo, nama saya </span><span class="si">%s</span><span class="s">, apa kabar?&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nama</span>
+
+    <span class="k">def</span> <span class="nf">total_populasi</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&#39;Total Orang </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">cls</span><span class="o">.</span><span class="n">total</span>
+
+    <span class="c"># method class</span>
+    <span class="n">total_populasi</span> <span class="o">=</span> <span class="nb">classmethod</span><span class="p">(</span><span class="n">total_populasi</span><span class="p">)</span>
+
+<span class="n">org</span> <span class="o">=</span> <span class="n">Orang</span><span class="p">(</span><span class="s">&#39;budi&#39;</span><span class="p">)</span>
+<span class="n">org</span><span class="o">.</span><span class="n">katakanHalo</span><span class="p">()</span>
+<span class="n">Orang</span><span class="o">.</span><span class="n">total_populasi</span><span class="p">()</span>
+
+<span class="n">org2</span> <span class="o">=</span> <span class="n">Orang</span><span class="p">(</span><span class="s">&#39;andi&#39;</span><span class="p">)</span>
+<span class="n">org2</span><span class="o">.</span><span class="n">katakanHalo</span><span class="p">()</span>
+<span class="n">Orang</span><span class="o">.</span><span class="n">total_populasi</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="s">&#39;obyek dihapus&#39;</span>
+<span class="k">del</span> <span class="n">org</span>
+<span class="k">del</span> <span class="n">org2</span>
+
+<span class="n">Orang</span><span class="o">.</span><span class="n">total_populasi</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inheritance">
+<h2>Inheritance<a class="headerlink" href="#inheritance" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Salah satu keuntungan dari OOP adalan penggunaan ulang kode dan
+salah satu caranya yaitu menggunakan mekanisme <em>inheritance</em> / turunan.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat35.py</span>
+
+<span class="c"># base class / superclass</span>
+<span class="k">class</span> <span class="nc">AnggotaSekolah</span><span class="p">:</span>
+    <span class="s">&quot;representasi anggota sekolah&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nama</span><span class="p">,</span> <span class="n">umur</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nama</span> <span class="o">=</span> <span class="n">nama</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">umur</span> <span class="o">=</span> <span class="n">umur</span>
+
+        <span class="k">print</span> <span class="s">&#39;membuat anggota sekolah baru: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nama</span>
+
+    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">&quot;cetak info&quot;</span>
+        <span class="k">print</span> <span class="s">&#39;Nama: </span><span class="si">%s</span><span class="s">, Umur: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nama</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">umur</span><span class="p">)</span>
+
+<span class="c"># subclass</span>
+<span class="k">class</span> <span class="nc">Guru</span><span class="p">(</span><span class="n">AnggotaSekolah</span><span class="p">):</span>
+    <span class="s">&quot;representasi guru&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nama</span><span class="p">,</span> <span class="n">umur</span><span class="p">,</span> <span class="n">gaji</span><span class="p">):</span>
+        <span class="n">AnggotaSekolah</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nama</span><span class="p">,</span> <span class="n">umur</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gaji</span> <span class="o">=</span> <span class="n">gaji</span>
+
+        <span class="k">print</span> <span class="s">&#39;membuat guru: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nama</span>
+
+    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">AnggotaSekolah</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">&#39;Gaji: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">gaji</span>
+
+<span class="c"># subclass</span>
+<span class="k">class</span> <span class="nc">Siswa</span><span class="p">(</span><span class="n">AnggotaSekolah</span><span class="p">):</span>
+    <span class="s">&quot;representasi siswa&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nama</span><span class="p">,</span> <span class="n">umur</span><span class="p">,</span> <span class="n">nilai</span><span class="p">):</span>
+        <span class="n">AnggotaSekolah</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nama</span><span class="p">,</span> <span class="n">umur</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nilai</span> <span class="o">=</span> <span class="n">nilai</span>
+
+        <span class="k">print</span> <span class="s">&#39;membuat siswa: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nama</span>
+
+    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">AnggotaSekolah</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">&#39;Nilai: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nilai</span>
+
+
+<span class="n">guru</span> <span class="o">=</span> <span class="n">Guru</span><span class="p">(</span><span class="s">&#39;Budi&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">3000000</span><span class="p">)</span>
+<span class="n">siswa</span> <span class="o">=</span> <span class="n">Siswa</span><span class="p">(</span><span class="s">&#39;Andi&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+
+<span class="c"># cetak baris kosong</span>
+<span class="k">print</span>
+
+<span class="n">anggota</span> <span class="o">=</span> <span class="p">[</span><span class="n">guru</span><span class="p">,</span> <span class="n">siswa</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">orang</span> <span class="ow">in</span> <span class="n">anggota</span><span class="p">:</span>
+    <span class="n">orang</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             >index</a></li>
+        <li class="right" >
+          <a href="io.html" title="Input dan Output"
+             >berikut</a> |</li>
+        <li class="right" >
+          <a href="struktur_data.html" title="Struktur Data"
+             >sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Indocisc.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>

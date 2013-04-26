@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Eksepsi (Exception) &mdash; Workshop Python 101</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Workshop Python 101" href="index.html" />
+    <link rel="next" title="Library Standar (Standard Library)" href="standard_library.html" />
+    <link rel="prev" title="Input dan Output" href="io.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="standard_library.html" title="Library Standar (Standard Library)"
+             accesskey="N">berikut</a> |</li>
+        <li class="right" >
+          <a href="io.html" title="Input dan Output"
+             accesskey="P">sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Daftar Isi</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Eksepsi (Exception)</a><ul>
+<li><a class="reference internal" href="#syntax-error">Syntax Error</a></li>
+<li><a class="reference internal" href="#exception">Exception</a></li>
+<li><a class="reference internal" href="#penanganan-exception">Penanganan Exception</a></li>
+<li><a class="reference internal" href="#mengeluarkan-exception">Mengeluarkan Exception</a></li>
+<li><a class="reference internal" href="#try-finally">Try ... Finally</a></li>
+<li><a class="reference internal" href="#statemen-with">Statemen with</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Topik sebelum</h4>
+  <p class="topless"><a href="io.html"
+                        title="bab sebelum">Input dan Output</a></p>
+  <h4>Topik berikutnya</h4>
+  <p class="topless"><a href="standard_library.html"
+                        title="bab berikutnya">Library Standar (Standard Library)</a></p>
+  <h3>Halaman Ini</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/exception.txt"
+           rel="nofollow">Lihat Sumber</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pencarian cepat</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Masukkan term pencarian atau nama modul, class atau fungsi.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="eksepsi-exception">
+<h1>Eksepsi (Exception)<a class="headerlink" href="#eksepsi-exception" title="Link permanent untuk headline ini">¶</a></h1>
+<p>Eksepsi terjadi ketika ada sesuatu yang terduga muncul dalam program.
+Misalnya program anda akan membaca suatu file, namun file tersebut tidak ada.
+Hal seperti ini ditangani dengan <tt class="docutils literal"><span class="pre">exception</span></tt></p>
+<div class="section" id="syntax-error">
+<h2>Syntax Error<a class="headerlink" href="#syntax-error" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Syntax error, atau dikenal juga sebagai parsing error, adalah error ketika
+Python memparsing program anda.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span> <span class="s">&#39;halo&#39;</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+<span class="gr">  Print &#39;halo&#39;</span>
+<span class="gr">            ^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="bp">True</span> <span class="k">print</span> <span class="s">&#39;Hello world&#39;</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+<span class="gr">  while True print &#39;Hello world&#39;</span>
+<span class="gr">                 ^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exception">
+<h2>Exception<a class="headerlink" href="#exception" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Kita akan mencoba / <strong>try</strong> membaca input dari pengguna. Tekan
+<tt class="docutils literal"><span class="pre">Ctrl-d</span></tt> apa yang akan terjadi.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">teks</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Ketikkan sesuatu: &#39;</span><span class="p">)</span>
+<span class="go">Ketikkan sesuatu: Traceback (most recent call last):</span>
+<span class="go">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">EOFError</span>
+</pre></div>
+</div>
+<p>Python mengeluarkan eksepsi <tt class="docutils literal"><span class="pre">EOFError</span></tt> yang berarti menemukan simbol
+<em>end of file</em> (direpresentasikan oleh <tt class="docutils literal"><span class="pre">Ctrl-d</span></tt>) ketika program berharap
+tidak akan ada.</p>
+</div>
+<div class="section" id="penanganan-exception">
+<h2>Penanganan Exception<a class="headerlink" href="#penanganan-exception" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Kita dapat menangani eksepsi menggunakan statemen <tt class="docutils literal"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span></tt>. Sederhananya
+kita letakkan statemen yang mungkin mengeluarkan eksepsi kedalam <tt class="docutils literal"><span class="pre">try-block</span></tt>, dan
+letakan kode penanganan eksepsi kedapam <tt class="docutils literal"><span class="pre">except-block</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat39.py</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">teks</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Ketikkan sesuatu: &#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">Kenapa sudah EOF?&#39;</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">Anda membatalkan operasi&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Anda mengetikkan &quot;</span><span class="si">%s</span><span class="s">&quot;&#39;</span> <span class="o">%</span> <span class="n">teks</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mengeluarkan-exception">
+<h2>Mengeluarkan Exception<a class="headerlink" href="#mengeluarkan-exception" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Anda dapat mengeluarkan eksepsi menggunakan statemen <tt class="docutils literal"><span class="pre">raise</span></tt> dengan
+menyediakan obyek eksepsi.</p>
+<p>Anda dapat membuat eksepsi sendiri dengan membuat class turunan <tt class="docutils literal"><span class="pre">Exception</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat40.py</span>
+
+<span class="k">class</span> <span class="nc">InputPendekError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="s">&quot;exception jika input terlalu pendek&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">panjang</span><span class="p">,</span> <span class="n">minimal</span><span class="p">):</span>
+        <span class="ne">Exception</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">panjang</span> <span class="o">=</span> <span class="n">panjang</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minimal</span> <span class="o">=</span> <span class="n">minimal</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">teks</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Ketikkan sesuatu: &#39;</span><span class="p">)</span>
+    <span class="n">panjang</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
+    <span class="n">minimal_panjang</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="k">if</span> <span class="n">panjang</span> <span class="o">&lt;</span> <span class="n">minimal_panjang</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InputPendekError</span><span class="p">(</span><span class="n">panjang</span><span class="p">,</span> <span class="n">minimal_panjang</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">Kenapa sudah EOF?&#39;</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">Anda membatalkan operasi&#39;</span>
+<span class="k">except</span> <span class="n">InputPendekError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;input terlalu pendek: panjang input: </span><span class="si">%s</span><span class="s">, minimal: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">panjang</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">minimal</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Anda mengetikkan &quot;</span><span class="si">%s</span><span class="s">&quot;&#39;</span> <span class="o">%</span> <span class="n">teks</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="try-finally">
+<h2>Try ... Finally<a class="headerlink" href="#try-finally" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Ketika anda membaca file dari program anda. Bagaimana anda memastikan
+file akan ditutup baik ada eksepsi maupun tidak. Anda bisa menggunakan
+blok <tt class="docutils literal"><span class="pre">finally</span></tt> pada blok <tt class="docutils literal"><span class="pre">try</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat41.py</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;coba.txt&#39;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">baris</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">baris</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c"># EOF</span>
+            <span class="k">break</span>
+        <span class="k">print</span> <span class="n">baris</span><span class="p">,</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c"># delay 2 detik</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">Anda membatalkan operasi&#39;</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">print</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">file ditutup.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="statemen-with">
+<h2>Statemen with<a class="headerlink" href="#statemen-with" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Mendapatkan <em>resource</em> pada blok <tt class="docutils literal"><span class="pre">try</span></tt> dan melepasnya pada blok <tt class="docutils literal"><span class="pre">finally</span></tt>
+merupakan pola yang umum ditemukan. Oleh karena itu, anda dapat menggunakan
+menggunakan statemen <tt class="docutils literal"><span class="pre">with</span></tt> yang menyediakan mekanisme diatas secara otomatis.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat42.py</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;coba.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">baris</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">baris</span><span class="p">,</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             >index</a></li>
+        <li class="right" >
+          <a href="standard_library.html" title="Library Standar (Standard Library)"
+             >berikut</a> |</li>
+        <li class="right" >
+          <a href="io.html" title="Input dan Output"
+             >sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Indocisc.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>

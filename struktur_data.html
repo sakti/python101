@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Struktur Data &mdash; Workshop Python 101</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Workshop Python 101" href="index.html" />
+    <link rel="next" title="Object-Oriented Programming (Pemrograman berorientasi Obyek)" href="oop.html" />
+    <link rel="prev" title="Modul" href="modul.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="oop.html" title="Object-Oriented Programming (Pemrograman berorientasi Obyek)"
+             accesskey="N">berikut</a> |</li>
+        <li class="right" >
+          <a href="modul.html" title="Modul"
+             accesskey="P">sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Daftar Isi</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Struktur Data</a><ul>
+<li><a class="reference internal" href="#list">List</a><ul>
+<li><a class="reference internal" href="#pengenalan-singkat-obyek-dan-class">Pengenalan singkat obyek dan class</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tuple">Tuple</a></li>
+<li><a class="reference internal" href="#dictionary">Dictionary</a></li>
+<li><a class="reference internal" href="#sequence">Sequence</a></li>
+<li><a class="reference internal" href="#set">Set</a></li>
+<li><a class="reference internal" href="#referensi">Referensi</a></li>
+<li><a class="reference internal" href="#string">String</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Topik sebelum</h4>
+  <p class="topless"><a href="modul.html"
+                        title="bab sebelum">Modul</a></p>
+  <h4>Topik berikutnya</h4>
+  <p class="topless"><a href="oop.html"
+                        title="bab berikutnya">Object-Oriented Programming (Pemrograman berorientasi Obyek)</a></p>
+  <h3>Halaman Ini</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/struktur_data.txt"
+           rel="nofollow">Lihat Sumber</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pencarian cepat</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Masukkan term pencarian atau nama modul, class atau fungsi.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="struktur-data">
+<h1>Struktur Data<a class="headerlink" href="#struktur-data" title="Link permanent untuk headline ini">¶</a></h1>
+<p>Struktur Data adalah struktur yang dapat menyimpan dan mengorganisasikan kumpulan data.
+Berikut struktur data yang ada dalam Python.</p>
+<div class="section" id="list">
+<h2>List<a class="headerlink" href="#list" title="Link permanent untuk headline ini">¶</a></h2>
+<p>List adalah struktur data yang menyimpan koleksi data terurut, anda dapat
+menyimpan sequence / rangkaian item menggunakan list.</p>
+<p>Item dalam list ditutup menggunakan kurung siku <tt class="docutils literal"><span class="pre">[]</span></tt> (list literal).
+Setelah list dibuat anda bisa menambah, mengurangi, dan mencari item pada
+list. Karena kita dapat menambah dan mengurangi item, list bersifat <tt class="docutils literal"><span class="pre">mutable</span></tt>.</p>
+<div class="section" id="pengenalan-singkat-obyek-dan-class">
+<h3>Pengenalan singkat obyek dan class<a class="headerlink" href="#pengenalan-singkat-obyek-dan-class" title="Link permanent untuk headline ini">¶</a></h3>
+<p>List adalah contoh penggunaan obyek dan class. Ketika kita menggunakan variabel
+<tt class="docutils literal"><span class="pre">i</span></tt> dan mengisinya dengan nilai integer <tt class="docutils literal"><span class="pre">5</span></tt>, sama dengan kita membuat obyek
+(instance) <tt class="docutils literal"><span class="pre">i</span></tt> dari class (tipe) <tt class="docutils literal"><span class="pre">int</span></tt>. Anda dapat membaca <tt class="docutils literal"><span class="pre">help(int)</span></tt> untuk
+membaca dokumentasi class integer.</p>
+<p>Class mempunyai method, fungsi yang didefinisikan dalam class. Anda bisa
+menggunakan method ini pada obyek class tersebut. Sebagai contoh, Python
+menyediakan method <tt class="docutils literal"><span class="pre">append</span></tt> untuk class list. <tt class="docutils literal"><span class="pre">contoh_list.append('item</span> <span class="pre">1')</span></tt>
+akan menambahkan string <tt class="docutils literal"><span class="pre">'item</span> <span class="pre">1'</span></tt> kedalam list <tt class="docutils literal"><span class="pre">contoh_list</span></tt>. Perhatikan
+notasi titik untuk mengakses method pada obyek.</p>
+<p>Class juga mempunyai field yang sama halnya variabel yang digunakan hanya
+untuk class. Anda bisa menggunakan variabel / nama ini pada obyek class tersebut.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat25.py</span>
+
+<span class="n">daftar_belanja</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;apel&#39;</span><span class="p">,</span> <span class="s">&#39;mangga&#39;</span><span class="p">,</span> <span class="s">&#39;wortel&#39;</span><span class="p">,</span> <span class="s">&#39;pisang&#39;</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="s">&#39;saya punya </span><span class="si">%s</span><span class="s"> barang yang akan dibeli&#39;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">daftar_belanja</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&#39;barang tersebut:&#39;</span>
+<span class="k">for</span> <span class="n">barang</span> <span class="ow">in</span> <span class="n">daftar_belanja</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">barang</span><span class="p">,</span>
+
+<span class="k">print</span> <span class="s">&#39;saya harus membeli beras&#39;</span>
+<span class="n">daftar_belanja</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;beras&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;daftar belanja sekarang :&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span>
+
+<span class="k">print</span> <span class="s">&#39;saya akan mengurutkan daftar belanja saya&#39;</span>
+<span class="n">daftar_belanja</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">&#39;daftar belanja setelah diurutkan&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span>
+
+<span class="k">print</span> <span class="s">&#39;barang yang harus saya beli pertama&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">barang_pertama</span> <span class="o">=</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">del</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="s">&#39;saya membeli&#39;</span><span class="p">,</span> <span class="n">barang_pertama</span>
+<span class="k">print</span> <span class="s">&#39;daftar belanja sekarang:&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tuple">
+<h2>Tuple<a class="headerlink" href="#tuple" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Tuple mirip dengan list namun tuple bersifat immutable (tidak bisa diubah
+setelah didefinisikan).</p>
+<p>Tuple dibuat dengan menspesifikasikan item tuple dipisahkan menggunakan
+tanda koma dan opsional diapit dengan tanda kurung.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat26.py</span>
+
+<span class="n">kebun_binatang</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;ular python&#39;</span><span class="p">,</span> <span class="s">&#39;gajah&#39;</span><span class="p">,</span> <span class="s">&#39;pinguin&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;jumlah binatang yang ada di kebun binatang :&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">kebun_binatang</span><span class="p">)</span>
+
+<span class="n">kebun_binatang_baru</span> <span class="o">=</span> <span class="s">&#39;monyet&#39;</span><span class="p">,</span> <span class="s">&#39;unta&#39;</span><span class="p">,</span> <span class="n">kebun_binatang</span>
+<span class="k">print</span> <span class="s">&#39;jumlah kandang di kebun binatang baru:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">kebun_binatang_baru</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;binatang yang ada di kebun bintatang baru:&#39;</span><span class="p">,</span> <span class="n">kebun_binatang_baru</span>
+<span class="k">print</span> <span class="s">&#39;binatang dari kebun binatang lama:&#39;</span><span class="p">,</span> <span class="n">kebun_binatang_baru</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;binatang terakhir dari kebun binatang lama:&#39;</span><span class="p">,</span> <span class="n">kebun_binatang_baru</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">jumlah_binatang</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">kebun_binatang_baru</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">kebun_binatang_baru</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="k">print</span> <span class="s">&#39;jumlah binatang yang ada di kebun binatang baru :&#39;</span><span class="p">,</span> <span class="n">jumlah_binatang</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dictionary">
+<h2>Dictionary<a class="headerlink" href="#dictionary" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Dictionary seperti buku alamat, dengan buku alamat anda bisa mencari
+alamat atau detail kontak hanya menggunakan nama orang yang anda cari.
+Kita mengasosiasikan <tt class="docutils literal"><span class="pre">key</span></tt> (nama) dengan <tt class="docutils literal"><span class="pre">value</span></tt> (detail). Catatan
+<tt class="docutils literal"><span class="pre">key</span></tt> harus bersifat unik, anda tidak bisa menemukan informasi yang
+tepat jika ada dua orang yang mempunyai nama yang sama dalam
+buku alamat anda.</p>
+<p>Anda hanya bisa menggunakan obyek immutable (seperti string) untuk
+<tt class="docutils literal"><span class="pre">key</span></tt>/ kunci dictionary. Anda bisa menggunakan obyek mutable atau immutable
+untuk <tt class="docutils literal"><span class="pre">value</span></tt> dalam dictionary.</p>
+<p>Dictionary dispesifikasikan menggunakan pasangan <tt class="docutils literal"><span class="pre">key</span></tt> dan <tt class="docutils literal"><span class="pre">value</span></tt> diapit
+menggunakan kurung kurawal, <tt class="docutils literal"><span class="pre">{key1:</span> <span class="pre">value1,</span> <span class="pre">key2:</span> <span class="pre">value2}</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat27.py</span>
+
+<span class="c"># ba, singkatan buku alamat</span>
+<span class="n">ba</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;guido&#39;</span><span class="p">:</span> <span class="s">&#39;guido@python.org&#39;</span><span class="p">,</span>
+    <span class="s">&#39;brandon&#39;</span><span class="p">:</span> <span class="s">&#39;brandon@rhodesmill.org&#39;</span><span class="p">,</span>
+    <span class="s">&#39;spammer&#39;</span><span class="p">:</span> <span class="s">&#39;spammer@domain.com&#39;</span><span class="p">}</span>
+
+<span class="k">print</span> <span class="s">&#39;alamat email guido:&#39;</span><span class="p">,</span> <span class="n">ba</span><span class="p">[</span><span class="s">&#39;guido&#39;</span><span class="p">]</span>
+
+<span class="c"># menghapus item</span>
+<span class="k">del</span> <span class="n">ba</span><span class="p">[</span><span class="s">&#39;spammer&#39;</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="s">&#39;ada </span><span class="si">%s</span><span class="s"> kontak di buku alamat&#39;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">ba</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">nama</span><span class="p">,</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">ba</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">, email: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">nama</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
+
+<span class="c"># tambah entri</span>
+<span class="n">ba</span><span class="p">[</span><span class="s">&#39;jacob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;jacob@jacobian.org&#39;</span>
+
+<span class="k">if</span> <span class="s">&#39;jacob&#39;</span> <span class="ow">in</span> <span class="n">ba</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Email jacob di&#39;</span><span class="p">,</span> <span class="n">ba</span><span class="p">[</span><span class="s">&#39;jacob&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sequence">
+<h2>Sequence<a class="headerlink" href="#sequence" title="Link permanent untuk headline ini">¶</a></h2>
+<p>List, tuple dan string adalah contoh dari sequence. Kita dapat melakukan
+tes keanggotaan, operasi index(akses, slicing), dan iterasi pada sequence.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat28.py</span>
+
+<span class="n">daftar_belanja</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;apel&#39;</span><span class="p">,</span> <span class="s">&#39;mangga&#39;</span><span class="p">,</span> <span class="s">&#39;wortel&#39;</span><span class="p">,</span> <span class="s">&#39;pisang&#39;</span><span class="p">]</span>
+<span class="n">nama</span> <span class="o">=</span> <span class="s">&#39;budi&#39;</span>
+
+<span class="k">print</span> <span class="s">&#39;Barang 0 =&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;Barang 1 =&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;Barang 2 =&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;Barang 3 =&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="s">&#39;Barang -1 =&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;Barang -2 =&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="s">&#39;Karakter 0 =&#39;</span><span class="p">,</span> <span class="n">nama</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c"># slicing pada list</span>
+<span class="k">print</span> <span class="s">&#39;Barang 1 ke 3:&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;Barang 2 ke terakhir:&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="k">print</span> <span class="s">&#39;Barang 1 ke -1:&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;Barang dari awal ke akhir:&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span><span class="p">[:]</span>
+
+<span class="c"># slicing pada string</span>
+<span class="k">print</span> <span class="s">&#39;Karakter 1 ke 3:&#39;</span><span class="p">,</span> <span class="n">nama</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;Karakter 2 ke terakhir:&#39;</span><span class="p">,</span> <span class="n">nama</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="k">print</span> <span class="s">&#39;Karakter 1 ke -1:&#39;</span><span class="p">,</span> <span class="n">nama</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;Karakter dari awal ke akhir:&#39;</span><span class="p">,</span> <span class="n">nama</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set">
+<h2>Set<a class="headerlink" href="#set" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Set adalah koleksi obyek yang tidak terurut. Digunakan ketika
+keberadaan obyek pada koleksi lebih penting daripada urutan dan berapa kali
+obyek muncul pada koleksi.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat29.py</span>
+<span class="n">negara</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;brazil&#39;</span><span class="p">,</span> <span class="s">&#39;rusia&#39;</span><span class="p">,</span> <span class="s">&#39;indonesia&#39;</span><span class="p">])</span>
+
+<span class="k">print</span> <span class="s">&#39;indonesia&#39;</span> <span class="ow">in</span> <span class="n">negara</span>
+<span class="k">print</span> <span class="s">&#39;amerika&#39;</span> <span class="ow">in</span> <span class="n">negara</span>
+
+<span class="n">negara2</span> <span class="o">=</span> <span class="n">negara</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">negara2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#39;korea&#39;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">negara2</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">negara</span><span class="p">)</span>
+
+<span class="n">negara</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&#39;rusia&#39;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">negara2</span> <span class="o">&amp;</span> <span class="n">negara</span>
+<span class="k">print</span> <span class="n">negara2</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">negara</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="referensi">
+<h2>Referensi<a class="headerlink" href="#referensi" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Jika anda membuat obyek dan mengisinya ke variabel, variabel hanya
+me <em>refer</em> ke obyek dan tidak merepresentasikan obyek itu sendiri.
+Nama variabel menunjuk ke bagian memori komputer dimana obyek disimpan.
+Hal ini dinamakan <strong>binding</strong> antara nama ke obyek.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat29.py</span>
+
+<span class="n">daftar_belanja</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;apel&#39;</span><span class="p">,</span> <span class="s">&#39;mangga&#39;</span><span class="p">,</span> <span class="s">&#39;wortel&#39;</span><span class="p">,</span> <span class="s">&#39;pisang&#39;</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&#39;assignment biasa&#39;</span>
+<span class="n">daftar_saya</span> <span class="o">=</span> <span class="n">daftar_belanja</span>
+
+<span class="k">del</span> <span class="n">daftar_belanja</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="s">&#39;daftar belanja:&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span>
+<span class="k">print</span> <span class="s">&#39;daftar saya:&#39;</span><span class="p">,</span> <span class="n">daftar_saya</span>
+
+<span class="k">print</span> <span class="s">&#39;copy obyek daftar belanja menggunakan slice [:]&#39;</span>
+<span class="n">daftar_saya</span> <span class="o">=</span> <span class="n">daftar_belanja</span><span class="p">[:]</span> <span class="c"># membuat copy</span>
+
+<span class="k">del</span> <span class="n">daftar_saya</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="s">&#39;daftar belanja:&#39;</span><span class="p">,</span> <span class="n">daftar_belanja</span>
+<span class="k">print</span> <span class="s">&#39;daftar saya:&#39;</span><span class="p">,</span> <span class="n">daftar_saya</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="string">
+<h2>String<a class="headerlink" href="#string" title="Link permanent untuk headline ini">¶</a></h2>
+<p>Tipe atau class String mempunyai method-method untuk memudahkan operasi string.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># lat30.py</span>
+
+<span class="n">nama</span> <span class="o">=</span> <span class="s">&#39;Indonesia&#39;</span>
+
+<span class="k">if</span> <span class="n">nama</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;ind&#39;</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&#39;Nama diawal dengan &quot;ind&quot;&#39;</span>
+<span class="k">if</span> <span class="s">&#39;ne&#39;</span> <span class="ow">in</span> <span class="n">nama</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Nama berisi string &quot;ne&quot;&#39;</span>
+<span class="k">if</span> <span class="n">nama</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;done&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Nama berisi string &quot;done&quot;&#39;</span>
+
+<span class="n">pembatas</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span>
+<span class="n">daftar_belanja</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;apel&#39;</span><span class="p">,</span> <span class="s">&#39;mangga&#39;</span><span class="p">,</span> <span class="s">&#39;wortel&#39;</span><span class="p">,</span> <span class="s">&#39;pisang&#39;</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="n">pembatas</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">daftar_belanja</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigasi</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks Umum"
+             >index</a></li>
+        <li class="right" >
+          <a href="oop.html" title="Object-Oriented Programming (Pemrograman berorientasi Obyek)"
+             >berikut</a> |</li>
+        <li class="right" >
+          <a href="modul.html" title="Modul"
+             >sebelum</a> |</li>
+        <li><a href="index.html">Workshop Python 101</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Indocisc.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+    </div>
+  </body>
+</html>
